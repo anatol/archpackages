@@ -1,0 +1,33 @@
+# Contributor: Murtuza Akhtari <inxsible at gmail dot com>
+# Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
+
+pkgname=uefivars-git
+pkgver=20100122
+pkgrel=1
+pkgdesc="A tool to populate UEFI Runtime Variables. Requires the kernel module efivars to be loaded."
+arch=(i686 x86_64)
+url="http://sourceforge.net/projects/uefivars/"
+license=(GPL)
+depends=(efibootmgr)
+source=('uefivars::git://uefivars.git.sourceforge.net/gitroot/uefivars/uefivars')
+md5sums=('SKIP')
+
+pkgver() {
+  cd $srcdir/uefivars
+  echo $(git log -1 --format="%cd" --date=short | sed 's|-||g')
+}
+
+prepare() {
+  # uefivars-git does not respect CFLAGS, fix it
+  sed -e 's/CFLAGS = $(EXTRA_CFLAGS)/CFLAGS += $(EXTRA_CFLAGS)/' -i $srcdir/uefivars/Makefile
+}
+
+build() {
+  cd $srcdir/uefivars
+  make
+}
+
+package() {
+  cd $srcdir/uefivars
+  install -D -m755 src/uefivars/uefivars $pkgdir/usr/bin/uefivars
+}

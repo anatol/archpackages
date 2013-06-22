@@ -1,0 +1,41 @@
+post_install() {
+  post_upgrade
+  passwd -l amule &>/dev/null
+}
+
+_generate_config_file() {
+  # Generate a random password for amuled<->amuleweb communication
+  ec_password=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1)
+  encripted_ec_password=$(echo -n $ec_password | md5sum | cut -d ' ' -f 1)
+
+  mkdir -p /var/lib/amule/.aMule
+  echo "[ExternalConnect]
+AcceptExternalConnections=1
+ECPassword=$encripted_ec_password" > /var/lib/amule/.aMule/amule.conf
+  chown amule:amule -R /var/lib/amule
+
+  sudo -u amule /usr/bin/amuleweb --write-config --password=$ec_password --admin-pass=amule
+
+  echo "A new password for extarnal configuration is generated: $ec_password"
+  echo "Please follow https://wiki.archlinux.org/index.php/AMule how to setup"
+  echo "external connection (e.g. using amule-gui tool)."
+  echo "amuleweb can be started as 'systemctl start amuleweb'."
+  echo "Password for amuleweb: amule"
+}
+
+post_upgrade() {
+  # create user/group that the daemon will run as by default, do not delete this on uninstall, as it will own files
+  getent group amule >/dev/null || groupadd amule
+  getent passwd amule >/dev/null || useradd -c 'aMule Client' -g amule -d '/var/lib/amule' -m -s /bin/false amule
+
+  if [ ! -e /var/lib/amule/.aMule/amule.conf ]; then
+    _generate_config_file
+  fi
+}
+
+post_remove() {
+  # TOTHINK: delete homedir and user account/group?
+  #getent passwd amule >/dev/null && userdel amule
+  #getent group amule >/dev/null && groupdel amule
+  true
+}

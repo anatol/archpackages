@@ -1,0 +1,37 @@
+# Maintainer: Arvid Norlander <anmaster A_T tele2 d_o_t (ccTLD for Sweden, which is se)>
+# Contributor: Patrick McCarty <pnorcks at gmail dot com>
+
+pkgname=tup-git
+pkgver=0.6.5
+pkgrel=1
+pkgdesc="A fast, file-based build system"
+arch=('i686' 'x86_64')
+url="http://gittup.org/tup/index.html"
+license=('GPL2')
+depends=('fuse')
+makedepends=('git')
+source=('tup::git://github.com/gittup/tup.git')
+sha512sums=('SKIP' )
+
+pkgver() {
+  cd $srcdir/tup
+  git describe | sed 's/^v//;s/-/./g'
+}
+
+build() {
+  cd $srcdir/tup
+  sh bootstrap.sh
+}
+
+check() {
+  cd $srcdir/tup/test
+  ./test.sh
+}
+
+package() {
+  cd $srcdir/tup
+
+  install -d $pkgdir/usr/bin $pkgdir/usr/share/man/man1
+  install -m755 -t $pkgdir/usr/bin tup
+  install -m644 -t $pkgdir/usr/share/man/man1 tup.1
+}

@@ -37,7 +37,7 @@ post_upgrade() {
 }
 
 post_remove() {
-  /usr/bin/systemctl stop rethinkdb@default.service
+  #/usr/bin/systemctl stop rethinkdb@default.service
 
   getent passwd rethinkdb >/dev/null && userdel rethinkdb
   getent group rethinkdb >/dev/null && groupdel rethinkdb

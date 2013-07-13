@@ -3,24 +3,12 @@ post_install() {
   passwd -l amule &>/dev/null
 }
 
-_generate_config_file() {
-  # Generate a random password for amuled<->amuleweb communication
-  ec_password=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1)
-  encripted_ec_password=$(echo -n $ec_password | md5sum | cut -d ' ' -f 1)
-
-  mkdir -p /var/lib/amule/.aMule
-  echo "[ExternalConnect]
-AcceptExternalConnections=1
-ECPassword=$encripted_ec_password" > /var/lib/amule/.aMule/amule.conf
-  chown amule:amule -R /var/lib/amule
-
-  sudo -u amule /usr/bin/amuleweb --write-config --password=$ec_password --admin-pass=amule
-
-  echo "A new password for extarnal configuration is generated: $ec_password"
-  echo "Please follow https://wiki.archlinux.org/index.php/AMule how to setup"
-  echo "external connection (e.g. using amule-gui tool)."
+_config_instructions() {
+  echo "If you plan to use external client (e.g. amuleGUI or amuleweb) then you need to"
+  echo "provide [ExternalConnect] configuration."
+  echo "You also need to specify amuleweb password."
+  echo "Please follow https://wiki.archlinux.org/index.php/AMule for more information."
   echo "amuleweb can be started as 'systemctl start amuleweb'."
-  echo "Password for amuleweb: amule"
 }
 
 post_upgrade() {
@@ -29,7 +17,7 @@ post_upgrade() {
   getent passwd amule >/dev/null || useradd -c 'aMule Client' -g amule -d '/var/lib/amule' -m -s /bin/false amule
 
   if [ ! -e /var/lib/amule/.aMule/amule.conf ]; then
-    _generate_config_file
+    _config_instructions
   fi
 }
 

@@ -7,12 +7,12 @@
 
 pkgname=amule
 pkgver=10803
-pkgrel=3
+pkgrel=4
 pkgdesc="An eMule-like client for ed2k p2p network"
 arch=('i686' 'x86_64')
 url="http://www.amule.org"
 license=('GPL')
-depends=('wxgtk' 'gd' 'geoip' 'libupnp' 'crypto++')
+depends=('wxgtk2.9' 'gd' 'geoip' 'libupnp' 'crypto++')
 install=amule.install
 source=("http://amule.sourceforge.net/tarballs/aMule-SVN-r${pkgver}.tar.bz2"
         'amuled.systemd'
@@ -38,7 +38,8 @@ build() {
               --enable-optimize \
               --enable-ccache \
               --enable-geoip \
-              --enable-upnp
+              --enable-upnp \
+              --with-wx-config=/usr/bin/wx-config-2.9
 
   make
 }

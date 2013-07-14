@@ -7,7 +7,7 @@ url="http://www.tarantool.org"
 license=(BSD)
 depends=()
 # gcc has problems with HEAD tarantool
-makedepends=(cmake clang)
+makedepends=(cmake clang lynx)
 source=('tarantool::git://github.com/mailru/tarantool#branch=stable'
         'lua-cjson::git://github.com/mpx/lua-cjson.git'
         'luajit::git://repo.or.cz/luajit-2.0.git'
@@ -36,6 +36,8 @@ build() {
     -DCMAKE_SKIP_RPATH=ON \
     -DCMAKE_SYSCONF_DIR=/etc/tarantool \
     -DCMAKE_LOCALSTATE_DIR=/var \
+    -DENABLE_CLIENT=ON \
+    -DENABLE_DOC=ON \
     .
 
   make

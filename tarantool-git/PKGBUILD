@@ -1,5 +1,5 @@
 pkgname=tarantool-git
-pkgver=1.4.9.93.g93e547a
+pkgver=1.5.1.30.gdd6ee69
 pkgrel=1
 pkgdesc="persistent, transactional in-memory database"
 arch=(i686 x86_64)

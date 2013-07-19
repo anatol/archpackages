@@ -1,3 +1,5 @@
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
+
 pkgname=mruby-git
 pkgver=3510.56a3952
 pkgrel=1

@@ -1,3 +1,5 @@
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
+
 pkgname=tarantool-git
 pkgver=1.5.1.32.g929568d
 pkgrel=1

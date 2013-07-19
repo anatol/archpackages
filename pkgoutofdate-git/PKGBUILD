@@ -1,3 +1,5 @@
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
+
 _name=pkgoutofdate
 pkgname=$_name-git
 pkgver=6.33b1af4

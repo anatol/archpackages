@@ -1,4 +1,4 @@
-# Maintaineri: Anatol Pomozov <anatol.pomozov@gmail.com>
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 pkgname=perl-dr-tarantool
 _cpanname=DR-Tarantool

@@ -16,7 +16,7 @@ sha512sums=('SKIP' )
 
 pkgver() {
   cd $srcdir/tup
-  git describe | sed 's/^v//;s/-/./g'
+  git describe | sed -E 's/^v//;s/([^-]*-g)/r\1/;s/-/./g'
 }
 
 build() {

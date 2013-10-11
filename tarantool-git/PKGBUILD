@@ -10,6 +10,7 @@ license=(BSD)
 depends=()
 # gcc has problems with HEAD tarantool
 makedepends=(cmake clang)
+#checkdepends(python2-daemon python2-yaml python2-pexpect)
 source=('tarantool::git://github.com/tarantool/tarantool#branch=stable'
         'lua-cjson::git://github.com/mpx/lua-cjson.git'
         'luajit::git://repo.or.cz/luajit-2.0.git'

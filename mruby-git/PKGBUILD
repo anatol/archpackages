@@ -1,7 +1,7 @@
 # Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 pkgname=mruby-git
-pkgver=3775.ad5c408
+pkgver=3846.480e329
 pkgrel=1
 pkgdesc="Lightweight Ruby (preliminary release for internal team review)"
 arch=(i686 x86_64)

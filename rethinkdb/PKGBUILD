@@ -35,10 +35,8 @@ build() {
 }
 
 check() {
-# TODO add fast integration tests. It seems requires memcached, but it is a new dependency :(
   cd "$srcdir/$pkgname-$pkgver"
-# make tests require 'python2' and 'ruby-protocol-buffers' for drivers
-# make test
+  make unit
 }
 
 package() {

@@ -10,21 +10,21 @@ license=('BSD')
 dependencies=('google-coredumper')
 url="http://search.cpan.org/dist/${_cpanname}/"
 depends=()
-source=("http://search.cpan.org/CPAN/authors/id/F/FL/FLORA/${_cpanname}-${pkgver}.tar.gz")
+source=("http://search.cpan.org/CPAN/authors/id/F/FL/FLORA/${_cpanname}-$pkgver.tar.gz")
 sha1sums=('9c062b63eaeaa5e01e0ed2f696d06b22a8c695be')
 
 build() {
-  cd ${srcdir}/${_cpanname}-${pkgver}
+  cd ${_cpanname}-$pkgver
   perl Makefile.PL -- INSTALLDIRS=vendor 
   make
 }
 
 check() {
-  cd ${srcdir}/${_cpanname}-${pkgver}
+  cd ${_cpanname}-$pkgver
   make test
 }
 
 package() {
-  cd ${srcdir}/${_cpanname}-${pkgver}
+  cd ${_cpanname}-$pkgver
   make install DESTDIR=${pkgdir} 
 }

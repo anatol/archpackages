@@ -12,12 +12,12 @@ source=('vmd::git://github.com/genaev/vmd.git')
 sha512sums=('SKIP' )
 
 pkgver() {
-  cd $srcdir/vmd
+  cd vmd
   echo $(git rev-list --count master).$(git rev-parse --short master)
 }
 
 package() {
-  cd $srcdir/vmd
+  cd vmd
 
   install -d $pkgdir/usr/bin
   install -m755 -t $pkgdir/usr/bin vmd.pl

@@ -13,23 +13,23 @@ source=('mruby::git://github.com/mruby/mruby.git')
 md5sums=('SKIP')
 
 pkgver() {
-  cd $srcdir/mruby
+  cd mruby
   # mruby repo does not have any git tags yet
   echo $(git rev-list --count master).$(git rev-parse --short master) 
 }
 
 build() {
-  cd $srcdir/mruby
+  cd mruby
   make
 }
 
 check() {
-  cd $srcdir/mruby
+  cd mruby
   make test
 }
 
 package() {
-  cd $srcdir/mruby
+  cd mruby
 
   install -d $pkgdir/usr/lib
   cp -r bin $pkgdir/usr/

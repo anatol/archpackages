@@ -72,7 +72,7 @@ package() {
   install -d $pkgdir/usr/include
   install -Dm644 include/*.h $pkgdir/usr/include
 
-  sed "s/@VERSION@/${pkgver}/g" -i ../v8.pc
+  sed "s/@VERSION@/$pkgver/g" -i ../v8.pc
   install -d $pkgdir/usr/lib/pkgconfig
   install -m644 ../v8.pc $pkgdir/usr/lib/pkgconfig
 

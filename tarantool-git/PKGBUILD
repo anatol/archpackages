@@ -21,12 +21,12 @@ sha1sums=('SKIP'
           'ad36cc26a66a50e8537570bfed5b620c775a9f85')
 
 pkgver() {
-  cd $srcdir/tarantool
+  cd tarantool
   git describe | sed 's/^v//;s/-/./g'
 }
 
 build() {
-  cd $srcdir/tarantool
+  cd tarantool
 
   # tarantool uses git submodule, handle this
   git submodule init
@@ -46,7 +46,7 @@ build() {
 }
 
 package() {
-  cd $srcdir/tarantool
+  cd tarantool
   make install DESTDIR=$pkgdir
-  install -D -m644 "${srcdir}/tarantool.systemd" "${pkgdir}/usr/lib/systemd/system/tarantool.service"
+  install -D -m644 "$srcdir/tarantool.systemd" "${pkgdir}/usr/lib/systemd/system/tarantool.service"
 }

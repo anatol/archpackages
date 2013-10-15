@@ -15,18 +15,18 @@ url="http://people.redhat.com/~anderson"
 sha1sums=('2216841453fec77f7f964f9bcd211102ad465ff0')
 
 prepare() {
-  cd $srcdir/$pkgname-$pkgver
+  cd $pkgname-$pkgver
   make gdb_unzip
   sed -i "/ac_cpp=/s/\$CPPFLAGS/\$CPPFLAGS -O2/" gdb-7.6/libiberty/configure
 }
 
 build() {
-  cd $srcdir/$pkgname-$pkgver
+  cd $pkgname-$pkgver
   make
 }
 
 package() {
-  cd $srcdir/$pkgname-$pkgver
+  cd $pkgname-$pkgver
 
   mkdir -p $pkgdir/usr/bin $pkgdir/usr/share/man/man8
   install ${pkgname} ${pkgdir}/usr/bin/

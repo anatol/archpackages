@@ -13,18 +13,18 @@ source=('ssmalloc::git://github.com/Naruil/SSMalloc.git')
 md5sums=('SKIP')
 
 pkgver() {
-  cd $srcdir/ssmalloc
+  cd ssmalloc
   # ssmalloc repo does not have any git tags yet
   echo $(git rev-list --count master).$(git rev-parse --short master) 
 }
 
 build() {
-  cd $srcdir/ssmalloc
+  cd ssmalloc
   make
 }
 
 package() {
-  cd $srcdir/ssmalloc
+  cd ssmalloc
   mkdir -p $pkgdir/usr/lib
   install libssmalloc.a $pkgdir/usr/lib
   install libssmalloc.so $pkgdir/usr/lib

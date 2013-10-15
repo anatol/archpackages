@@ -9,7 +9,7 @@ url="https://bugzilla.redhat.com/show_bug.cgi?id=755093"
 license=('GPL')
 arch=('i686' 'x86_64')
 
-source=("http://www.codon.org.uk/~mjg59/mactel-boot/mactel-boot-${pkgver}.tar.bz2"
+source=("http://www.codon.org.uk/~mjg59/mactel-boot/mactel-boot-$pkgver.tar.bz2"
         'mactel-boot-setup')
 
 sha256sums=('7c58df71b4c8fe3bdb719063a34265fe8e338d6cb5db024fc90ae716cbbf52f6'
@@ -20,20 +20,20 @@ prepare() {
 	# and do not put files into /usr/sbin
 	sed -e 's/$(CC) -g -o hfs-bless bless.c/$(CC) $(CFLAGS) -o hfs-bless bless.c/' \
 	    -e 's|/usr/sbin/hfs-bless|/usr/bin/hfs-bless|' \
-	    -i "${srcdir}/mactel-boot-${pkgver}/Makefile"
+	    -i "$srcdir/mactel-boot-$pkgver/Makefile"
 }
 
 build() {
-	cd "${srcdir}/mactel-boot-${pkgver}"
+	cd "$pkgname-$pkgver"
 	make
 }
 
 package() {
-	cd "${srcdir}/mactel-boot-${pkgver}"
+	cd "$pkgname-$pkgver"
 
 	make DESTDIR="$pkgdir" install
 	
-	install -D -m0755 "${srcdir}/mactel-boot-setup" "${pkgdir}/usr/bin/mactel-boot-setup"
+	install -D -m0755 "$srcdir/mactel-boot-setup" "${pkgdir}/usr/bin/mactel-boot-setup"
 	install -d "${pkgdir}/usr/share/mactel-boot"
-	install -D -m0644 "${srcdir}/mactel-boot-${pkgver}/SystemVersion.plist" "${pkgdir}/usr/share/mactel-boot/SystemVersion.plist"
+	install -D -m0644 "$srcdir/mactel-boot-$pkgver/SystemVersion.plist" "${pkgdir}/usr/share/mactel-boot/SystemVersion.plist"
 }

@@ -12,6 +12,6 @@ source=("$url/archive/v$pkgver.tar.gz")
 sha1sums=('1cf696b870d07fcdd878455ccebb6afa75d47025')
 
 package() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$pkgname-$pkgver"
   make install DESTDIR=$pkgdir
 }

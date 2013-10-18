@@ -41,8 +41,6 @@ prepare() {
   done
 
   # Remove broken tests
-  # Some internationalization tests are failing, v8 does not like upstream ICU
-  rm -rf test/intl/{date-format,number-format}
   # This test fails because of memory overhead (Arch specific compilation flags?)
   sed "s/'test-mark-compact.cc',//g" -i test/cctest/cctest.gyp
 }

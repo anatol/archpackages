@@ -9,8 +9,8 @@ pkgdesc='An open-source distributed database built with love.'
 arch=('i686' 'x86_64')
 url='http://www.rethinkdb.com/'
 license=(AGPL)
-depends=('protobuf' 'v8' 'zlib' 'termcap')
-makedepends=('boost' 'python' 'libunwind' 'gperftools')
+depends=('protobuf' 'v8' 'zlib' 'termcap' 'gperftools')
+makedepends=('boost' 'python')
 install=rethinkdb.install
 source=(
   http://download.rethinkdb.com/dist/rethinkdb-$pkgver.tgz
@@ -30,7 +30,7 @@ prepare() {
 
 build() {
   cd "$pkgname-$pkgver"
-  ./configure --disable-drivers --enable-precompiled-web --prefix=/usr --sysconfdir=/etc
+  ./configure --disable-drivers --dynamic all --enable-precompiled-web --prefix=/usr --sysconfdir=/etc
   make
 }
 

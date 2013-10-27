@@ -20,16 +20,18 @@ sha1sums=('e9c25fec4e1b9b929101201beacb9c5ba51ad78c'
           'dc53f149c21243e65dbc6e6463f9b373026e79d8'
           '493e5792257b6ea9651f1042683385d4850cc28d')
 
+prepare() {
+  export COPT="-DNO_SSL_DL -DUSE_LUA -lm -llua -lcrypto -lssl $CFLAGS $LDFLAGS"
+}
+
 build() {
   cd "$pkgname-$pkgver/build"
-
-  COPT="-DNO_SSL_DL -DUSE_LUA -lm -llua -lcrypto -lssl" make linux
+  make linux
 }
 
 check() {
   cd "$pkgname-$pkgver/build"
-
-  COPT="-DNO_SSL_DL -DUSE_LUA -lm -llua -lcrypto -lssl" make tests
+  make tests
 }
 
 package() {

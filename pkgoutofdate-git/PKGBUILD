@@ -2,7 +2,7 @@
 
 _name=pkgoutofdate
 pkgname=$_name-git
-pkgver=8.1632983
+pkgver=0.r8.1632983
 pkgrel=1
 pkgdesc="Checks whether Arch packages are out-of-date"
 arch=(any)
@@ -16,7 +16,7 @@ md5sums=('SKIP')
 pkgver() {
   cd $_name
   # repo does not have any git tags yet
-  echo $(git rev-list --count master).$(git rev-parse --short master) 
+  echo 0.r$(git rev-list --count master).$(git rev-parse --short master) 
 }
 
 prepare() {

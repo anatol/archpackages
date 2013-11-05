@@ -1,7 +1,7 @@
 # Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 pkgname=libnftables-git
-pkgver=0.r279.01e63f8
+pkgver=0.r285.b2262e6
 pkgrel=1
 pkgdesc='Netfilter nf_tables infrastructure library'
 arch=(i686 x86_64)
@@ -9,8 +9,15 @@ url='http://netfilter.org/projects/nftables/'
 license=(GPL2)
 depends=(libmnl)
 makedepends=()
-source=('libnftables::git://git.netfilter.org/libnftables')
-md5sums=('SKIP')
+source=('libnftables::git://git.netfilter.org/libnftables'
+        fix_include.diff)
+sha1sums=('SKIP'
+          'd88d9c30263da0aa5613a8b276ff635c8e5eb67a')
+
+prepare() {
+  cd libnftables
+  patch -p1 < ../fix_include.diff
+}
 
 pkgver() {
   cd libnftables

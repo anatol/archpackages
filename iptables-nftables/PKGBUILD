@@ -20,11 +20,6 @@ build() {
   make
 }
 
-check() {
-  cd iptables-nftables-$pkgver
-  make check
-}
-
 package() {
   cd iptables-nftables-$pkgver
   make DESTDIR="$pkgdir" install

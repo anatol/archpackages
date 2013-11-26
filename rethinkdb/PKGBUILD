@@ -53,8 +53,7 @@ package() {
 
   # create 'default' database instance
   cp "$pkgdir/etc/rethinkdb/default.conf.sample" "$pkgdir/etc/rethinkdb/instances.d/default.conf"
-  sed -e 's|# bind=127.0.0.1|bind=all|' \
-      -e 's|# directory=/var/lib/rethinkdb|directory=/var/lib/rethinkdb|' \
+  sed -e 's|# directory=/var/lib/rethinkdb|directory=/var/lib/rethinkdb|' \
       -e 's|# pid-file=/var/run/rethinkdb/rethinkdb.pid|pid-file=/var/run/rethinkdb/default.pid|' \
       -i "$pkgdir/etc/rethinkdb/instances.d/default.conf"
 

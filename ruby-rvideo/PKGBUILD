@@ -1,0 +1,22 @@
+# Maintainer: Anatol Pomozov <anatol dot pomozov at gmail dot com>
+
+_gemname=rvideo
+pkgname=ruby-$_gemname
+pkgver=0.9.3
+pkgrel=1
+pkgdesc='a Ruby library inspects and processes video and audio files by providing an interface to free Unix tools like ffmpeg'
+arch=('any')
+url="http://rvideo.rubyforge.org/"
+license=('BSD')
+depends=('ruby' 'ruby-activesupport' 'ffmpeg')
+makedepends=('rubygems')
+options=('!emptydirs')
+source=("https://rubygems.org/downloads/${_gemname}-$pkgver.gem")
+sha256sums=('fc8eb8d000a758cf95e82ce56f8ebf7b801be723f1fcf99db83393bfba18425f')
+
+package() {
+  cd "$srcdir"
+
+  local _gemdir="$(ruby -rubygems -e 'puts Gem.default_dir')"
+  gem install --no-user-install --ignore-dependencies -i "${pkgdir}"${_gemdir} -n "${pkgdir}/usr/bin" ${_gemname}-$pkgver.gem
+}

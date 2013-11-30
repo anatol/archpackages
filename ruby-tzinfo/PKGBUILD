@@ -1,0 +1,18 @@
+# Maintainer: Nathan Phillip Brink <binki@gentoo.org>
+
+pkgname=ruby-tzinfo
+pkgver=1.1.0
+pkgrel=1
+pkgdesc="A Ruby library for time zone transformations"
+arch=('any')
+url="http://tzinfo.rubyforge.org/"
+license=(MIT)
+depends=('ruby')
+source=(http://rubygems.org/downloads/${pkgname#*-}-${pkgver}.gem)
+sha1sums=('7fc79cdbbcb2bc6a71935e53c741846ca98264f6')
+
+package() {
+  cd "$srcdir"
+  local _gemdir="$(ruby -rubygems -e'puts Gem.default_dir')"
+  gem install --no-user-install --ignore-dependencies -i "$pkgdir$_gemdir" ${pkgname#*-}-${pkgver}.gem
+}

@@ -1,0 +1,32 @@
+# Maintainer: Anatol Pomozov <anatol dot pomozov at gmail dot com>
+
+pkgname=ruby-protocol-buffers
+pkgver=1.4.0
+pkgrel=1
+pkgdesc='An implementation of Protocol Buffers for Ruby'
+arch=(any)
+url='https://github.com/codekitchen/ruby-protocol-buffers'
+license=(BSD)
+depends=(ruby)
+makedepends=(rubygems)
+checkdepends=(ruby-bundler ruby-rspec ruby-yard ruby-simplecov)
+options=(!emptydirs)
+source=("https://rubygems.org/downloads/${pkgname}-$pkgver.gem")
+sha256sums=('f60dfc12a0ffa8ec4168f24862c578d7aee1390ea7db4fc609208b67527a4b26')
+
+build() {
+  local _gemdir="$(ruby -rubygems -e'puts Gem.default_dir')"
+  gem install --no-user-install --ignore-dependencies -i "${pkgname}${_gemdir}" -n "${pkgname}/usr/bin" ${pkgname}-${pkgver}.gem
+  rm -rf "${pkgname}${_gemdir}/cache"
+}
+
+check() {
+  local _gemdir="$(ruby -rubygems -e'puts Gem.default_dir')"
+  cd "${pkgname}${_gemdir}/gems/${pkgname}-$pkgver"
+  rake spec
+  rm -rf coverage
+}
+
+package() {
+  cp -r ${pkgname}/* "$pkgdir"
+}

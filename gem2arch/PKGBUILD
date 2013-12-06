@@ -1,0 +1,17 @@
+# Maintailer: Anatol Pomozov <anatol.pomozov@gmail.com>
+# Contributor: crab <crabtw@gmail.com>
+
+pkgname=gem2arch
+pkgver=0.1
+pkgrel=1
+pkgdesc='Create PKGBUILD from Ruby Gem Package'
+arch=(any)
+license=(Ruby)
+url='http://github.com/anatol/gem2arch'
+depends=(ruby)
+source=("https://github.com/anatol/gem2arch/archive/$pkgver.zip")
+sha1sums=('9658b90e3038b621a04db82dbaa0f7d087ac324e')
+
+package() {
+  install -D -m755 $pkgname-$pkgver/gem2arch.rb $pkgdir/usr/bin/gem2arch
+}

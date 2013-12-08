@@ -17,7 +17,7 @@ sha1sums=('SKIP'
 pkgver() {
   cd gibson
   # repo does not have any git tags yet
-  echo 0.r$(git rev-list --count unstable).$(git rev-parse --short unstable) 
+  echo 0.r$(git rev-list --count unstable).$(git rev-parse --short unstable)
 }
 
 build() {
@@ -32,4 +32,4 @@ package() {
 
   rm -rf $pkgdir/etc/init.d
   install -D -m644 ../gibson.service "$pkgdir/usr/lib/systemd/system/gibson.service"
-} 
+}

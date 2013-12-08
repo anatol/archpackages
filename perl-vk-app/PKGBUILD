@@ -14,7 +14,7 @@ sha1sums=('8ae59352f7832fa1d88fcead0650c05d7ea785f3')
 
 build() {
   cd ${_cpanname}-$pkgver
-  perl Makefile.PL -- INSTALLDIRS=vendor 
+  perl Makefile.PL -- INSTALLDIRS=vendor
   make
 }
 
@@ -25,5 +25,5 @@ check() {
 
 package() {
   cd ${_cpanname}-$pkgver
-  make install DESTDIR=${pkgdir} 
+  make install DESTDIR=${pkgdir}
 }

@@ -19,7 +19,7 @@ prepare() {
 
 build() {
   cd ${_cpanname}-$pkgver
-  perl Makefile.PL -- INSTALLDIRS=vendor 
+  perl Makefile.PL -- INSTALLDIRS=vendor
   make
 }
 
@@ -30,5 +30,5 @@ check() {
 
 package() {
   cd ${_cpanname}-$pkgver
-  make install DESTDIR=${pkgdir} 
+  make install DESTDIR=${pkgdir}
 }

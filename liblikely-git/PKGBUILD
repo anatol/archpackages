@@ -39,7 +39,7 @@ prepare() {
   git config submodule.llvm.url "$srcdir/llvm"
   git config submodule.lua.url "$srcdir/lua"
   git config submodule.opencv.url "$srcdir/opencv"
-  git config submodule.qcustomplot.url "$srcdir/qcustomplot" 
+  git config submodule.qcustomplot.url "$srcdir/qcustomplot"
   git config submodule.curl.url "$srcdir/curl"
   git submodule update
 

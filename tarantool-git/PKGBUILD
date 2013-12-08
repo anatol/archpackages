@@ -61,6 +61,9 @@ check() {
 
 package() {
   cd tarantool
-  make install DESTDIR="$pkgdir"
   install -D -m644 "$srcdir/tarantool.systemd" "$pkgdir/usr/lib/systemd/system/tarantool.service"
+  install -d -m755 "$pkgdir/usr/share/licenses/$pkgname"
+  ln -s /usr/share/doc/tarantool/LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+
+  make install DESTDIR="$pkgdir"
 }

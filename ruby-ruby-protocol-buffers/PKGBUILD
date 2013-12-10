@@ -2,7 +2,7 @@
 # Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 _gemname=ruby-protocol-buffers
-pkgname=ruby-protocol-buffers
+pkgname=ruby-$_gemname
 pkgver=1.5.1
 pkgrel=1
 pkgdesc='Ruby compiler and runtime for the google protocol buffers library.'

@@ -31,6 +31,8 @@ prepare() {
 
 build() {
   cd "$pkgname-$pkgver"
+  # TODO: upcoming version of rethinkdb is going to require ftch v8 by default
+  # We need to patch v8 sources somehow (python->python2 thing). See v8/PKGBUID for the list of changes.
   ./configure --disable-drivers --dynamic all --enable-precompiled-web --prefix=/usr --sysconfdir=/etc
   make
 }

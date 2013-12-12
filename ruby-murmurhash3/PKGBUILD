@@ -11,8 +11,8 @@ url='https://github.com/funny-falcon/murmurhash3-ruby'
 license=(MIT)
 depends=(ruby)
 options=(!emptydirs)
-source=("http://rubygems.org/downloads/$_gemname-$pkgver.gem")
-noextract=("$_gemname-$pkgver.gem")
+source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
 sha1sums=('f19aeadf7f01e0a496330a9a43256708d6845df2')
 
 package() {

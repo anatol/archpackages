@@ -11,8 +11,8 @@ url='https://github.com/rails/jbuilder'
 license=(MIT)
 depends=(ruby ruby-activesupport ruby-multi_json)
 options=(!emptydirs)
-source=("http://rubygems.org/downloads/$_gemname-$pkgver.gem")
-noextract=("$_gemname-$pkgver.gem")
+source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
 sha1sums=('a614f69172e8dee44226832e94e80a0c595225a2')
 
 package() {

@@ -11,8 +11,8 @@ url='http://www.rubyonrails.org'
 license=(MIT)
 depends=(ruby ruby-actionpack ruby-mail)
 options=(!emptydirs)
-source=("http://rubygems.org/downloads/$_gemname-$pkgver.gem")
-noextract=("$_gemname-$pkgver.gem")
+source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
 sha1sums=('744369829411616d403b09eb8d64370d1acd6ee1')
 
 package() {

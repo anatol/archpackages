@@ -11,8 +11,8 @@ url='https://github.com/funny-falcon/bin_utils'
 license=(MIT)
 depends=(ruby)
 options=(!emptydirs)
-source=("http://rubygems.org/downloads/$_gemname-$pkgver.gem")
-noextract=("$_gemname-$pkgver.gem")
+source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
 sha1sums=('312235e80cf53babe921c26039bf4e8b944b35d6')
 
 package() {

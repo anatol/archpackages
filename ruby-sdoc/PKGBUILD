@@ -11,8 +11,8 @@ url='http://github.com/voloko/sdoc'
 license=(MIT)
 depends=(ruby ruby-json)
 options=(!emptydirs)
-source=("http://rubygems.org/downloads/$_gemname-$pkgver.gem")
-noextract=("$_gemname-$pkgver.gem")
+source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
 sha1sums=('1917b8567d03a9b743ffffa944e27bccf25c768c')
 
 package() {

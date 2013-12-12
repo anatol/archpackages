@@ -13,7 +13,7 @@ license=(MIT)
 depends=(ruby)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
-noextract=("$_gemname-$pkgver.gem")
+noextract=($_gemname-$pkgver.gem)
 sha1sums=('0b7bd71d552625e0c4c672623a079e046cc0a236')
 
 package() {

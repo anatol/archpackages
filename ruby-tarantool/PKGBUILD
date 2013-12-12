@@ -11,8 +11,8 @@ url='http://github.com/mailru/tarantool-ruby'
 license=(BSD-2-Clause)
 depends=(ruby ruby-iproto ruby-murmurhash3 ruby-sumbur ruby-bin_utils)
 options=(!emptydirs)
-source=("http://rubygems.org/downloads/$_gemname-$pkgver.gem")
-noextract=("$_gemname-$pkgver.gem")
+source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
 sha1sums=('08000ebbf4b562e58efeb80ec63aa921fa62a254')
 
 package() {

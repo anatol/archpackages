@@ -11,8 +11,8 @@ url='http://whatisthor.com/'
 license=(MIT)
 depends=(ruby)
 options=(!emptydirs)
-source=("http://rubygems.org/downloads/$_gemname-$pkgver.gem")
-noextract=("$_gemname-$pkgver.gem")
+source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
 sha1sums=('cc9340688888a8cf8b0e9d70ad2701585dafa2e4')
 
 package() {

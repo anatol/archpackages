@@ -11,8 +11,8 @@ url='https://github.com/seattlerb/minitest'
 license=(MIT)
 depends=(ruby)
 options=(!emptydirs)
-source=("http://rubygems.org/downloads/$_gemname-$pkgver.gem")
-noextract=("$_gemname-$pkgver.gem")
+source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
 sha1sums=('321b43f6efeaf589c7586af33e164a4e859ff2d1')
 
 package() {

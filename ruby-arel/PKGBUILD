@@ -11,8 +11,8 @@ url='http://github.com/rails/arel'
 license=(MIT)
 depends=(ruby)
 options=(!emptydirs)
-source=("http://rubygems.org/downloads/$_gemname-$pkgver.gem")
-noextract=("$_gemname-$pkgver.gem")
+source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
 sha1sums=('aef89f8204ed8e3de40549e63c91e8a62623b6cb')
 
 package() {

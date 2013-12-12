@@ -7,7 +7,6 @@ pkgdesc="A User Space Threading Library Supporting Multi-Core Systems"
 arch=(i686 x86_64)
 url="https://github.com/brianwatling/libfiber"
 license=(Not specified)
-depends=()
 makedepends=(cmake)
 source=('libfiber::git://github.com/brianwatling/libfiber.git')
 md5sums=('SKIP')
@@ -35,6 +34,6 @@ check() {
 
 package() {
   cd libfiber
-  mkdir -p $pkgdir/usr/lib
-  install libfiber.so $pkgdir/usr/lib
+  mkdir -p "$pkgdir/usr/lib"
+  install libfiber.so "$pkgdir/usr/lib"
 }

@@ -39,8 +39,8 @@ build() {
 
   # tarantool uses git submodule, handle this
   git submodule init
-  git config submodule.lua-cjson.url $srcdir/third_party/lua-cjson
-  git config submodule.luajit.url $srcdir/third_party/luajit
+  git config submodule.lua-cjson.url "$srcdir/third_party/lua-cjson"
+  git config submodule.luajit.url "$srcdir/third_party/luajit"
   git submodule update
 
   CC=clang CXX=clang++ cmake \

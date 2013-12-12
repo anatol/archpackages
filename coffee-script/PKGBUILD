@@ -28,10 +28,10 @@ package() {
   # cake writes bullshit to ~/.noode-libraries, so set HOME to local dir
   HOME="$PWD" bin/cake --prefix "$pkgdir/usr/" install
 
-  install -d $pkgdir/usr/lib/node_modules
-  mv $pkgdir/usr/lib/coffee-script $pkgdir/usr/lib/node_modules/
-  ln -sf /usr/lib/node_modules/coffee-script/bin/{cake,coffee} $pkgdir/usr/bin/
+  install -d "$pkgdir/usr/lib/node_modules"
+  mv "$pkgdir/usr/lib/coffee-script" "$pkgdir/usr/lib/node_modules/"
+  ln -sf /usr/lib/node_modules/coffee-script/bin/{cake,coffee} "$pkgdir/usr/bin/"
 
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/${pkgname}/LICENSE"
-  install -Dm644 README "$pkgdir/usr/share/doc/${pkgname}/README"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 README "$pkgdir/usr/share/doc/$pkgname/README"
 }

@@ -31,9 +31,9 @@ check() {
 package() {
   cd mruby
 
-  install -d $pkgdir/usr/{bin,lib}
-  cp build/host/bin/* $pkgdir/usr/bin
-  cp build/host/lib/*.a $pkgdir/usr/lib
-  cp -r include $pkgdir/usr
+  install -d "$pkgdir/usr/{bin,lib}"
+  cp build/host/bin/* "$pkgdir/usr/bin"
+  cp build/host/lib/*.a "$pkgdir/usr/lib"
+  cp -r include "$pkgdir/usr"
 }
 

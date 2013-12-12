@@ -1,7 +1,7 @@
 # Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 pkgname=nftables-git
-pkgver=r174.b920d05
+pkgver=r176.3306660
 pkgrel=1
 pkgdesc='Netfilter nf_tables infrastructure library'
 arch=(i686 x86_64)

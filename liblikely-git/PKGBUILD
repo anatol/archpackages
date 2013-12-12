@@ -1,7 +1,7 @@
 # Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 pkgname=liblikely-git
-pkgver=r536.24e7f65
+pkgver=r550.26770da
 pkgrel=1
 pkgdesc='An image recognition runtime for heterogenous architectures'
 arch=(i686 x86_64)

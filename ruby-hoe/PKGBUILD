@@ -2,23 +2,22 @@
 # Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 # Contributor: Alexsandr Pavlov <kidoz at mail dot ru>
 
-_gemname=arel
+_gemname=hoe
 pkgname=ruby-$_gemname
-pkgver=5.0.0
+pkgver=3.7.2
 pkgrel=1
-pkgdesc='Arel is a SQL AST manager for Ruby'
+pkgdesc='Hoe is a rake/rubygems helper for project Rakefiles'
 arch=(any)
-url='http://github.com/rails/arel'
+url='http://www.zenspider.com/projects/hoe.html'
 license=(MIT)
 depends=(ruby)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)
-sha1sums=('aef89f8204ed8e3de40549e63c91e8a62623b6cb')
+sha1sums=('3cb15eb43e4f6af8f815079fdf723e3fe6d007ce')
 
 package() {
   local _gemdir="$(ruby -e'puts Gem.default_dir')"
   gem install --ignore-dependencies --no-user-install -i "$pkgdir/$_gemdir" -n "$pkgdir/usr/bin" $_gemname-$pkgver.gem
   rm "$pkgdir/$_gemdir/cache/$_gemname-$pkgver.gem"
-  install -D -m644 "$pkgdir/$_gemdir/gems/$_gemname-$pkgver/MIT-LICENSE.txt" "$pkgdir/usr/share/licenses/$pkgname/MIT-LICENSE.txt"
 }

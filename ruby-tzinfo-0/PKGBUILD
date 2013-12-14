@@ -2,7 +2,7 @@
 # Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 _gemname=tzinfo
-pkgname=ruby-${_gemname}-0
+pkgname=ruby-$_gemname-0
 pkgver=0.3.38
 pkgrel=1
 pkgdesc='Daylight-savings aware timezone library'

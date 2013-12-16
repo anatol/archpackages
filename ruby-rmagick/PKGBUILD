@@ -10,7 +10,7 @@ pkgdesc='Ruby binding to ImageMagick'
 arch=(i686 x86_64)
 url='http://rubyforge.org/projects/rmagick'
 license=(MIT)
-depends=(ruby)
+depends=(imagemagick ruby)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem
         hdri.patch)

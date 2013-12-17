@@ -5,7 +5,7 @@
 _gemname=rmagick
 pkgname=ruby-$_gemname
 pkgver=2.13.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Ruby binding to ImageMagick'
 arch=(i686 x86_64)
 url='http://rubyforge.org/projects/rmagick'
@@ -30,4 +30,6 @@ package() {
   local _gemdir="$(ruby -e'puts Gem.default_dir')"
   gem install --ignore-dependencies --no-user-install -i "$pkgdir/$_gemdir" -n "$pkgdir/usr/bin" $_gemname-$pkgver/$_gemname-$pkgver.gem
   rm "$pkgdir/$_gemdir/cache/$_gemname-$pkgver.gem"
+
+  rm -rf "$pkgdir/$_gemdir/gems/$_gemname-$pkgver/ext"
 }

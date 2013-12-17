@@ -4,12 +4,12 @@
 _gemname=bson_ext
 pkgname=ruby-$_gemname
 pkgver=1.9.2
-pkgrel=1
+pkgrel=2
 pkgdesc='C extensions for Ruby BSON.'
 arch=(i686 x86_64)
 url='http://www.mongodb.org'
 license=('Apache License Version 2.0')
-depends=(ruby ruby-bson)
+depends=(ruby ruby-bson-1)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)

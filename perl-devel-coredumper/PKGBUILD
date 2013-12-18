@@ -7,7 +7,7 @@ pkgrel=1
 pkgdesc="create core dumps of the running perl interpreter, without terminating"
 arch=(any)
 license=(BSD)
-url="http://search.cpan.org/dist/$_cpanname/"
+url=http://search.cpan.org/dist/$_cpanname/
 source=(http://search.cpan.org/CPAN/authors/id/F/FL/FLORA/$_cpanname-$pkgver.tar.gz
         fixes.diff)
 sha1sums=('9c062b63eaeaa5e01e0ed2f696d06b22a8c695be'

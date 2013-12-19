@@ -4,12 +4,12 @@
 _gemname=actionmailer
 pkgname=ruby-$_gemname-2
 pkgver=2.3.18
-pkgrel=1
+pkgrel=2
 pkgdesc='Service layer for easy email delivery and testing.'
 arch=(any)
 url='http://www.rubyonrails.org'
 license=(MIT)
-depends=(ruby ruby-actionpack)
+depends=(ruby ruby-actionpack-2)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)

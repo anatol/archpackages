@@ -6,7 +6,6 @@ pkgdesc='Library can be compiled into applications to create core dumps of the r
 url=https://code.google.com/p/google-coredumper/
 license=(GPL)
 arch=(i686 x86_64)
-depends=()
 # Upstream is currently broken.
 # Here are fixs for upstream https://github.com/anatol/google-coredumper
 source=("https://google-coredumper.googlecode.com/files/coredumper-$pkgver.tar.gz"

@@ -4,12 +4,12 @@
 _gemname=cerberus
 pkgname=ruby-$_gemname
 pkgver=0.8.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Cerberus is a Continuous Integration tool that could be easily run from Cron.'
 arch=(any)
 url='http://rubyforge.org/projects/cerberus'
 license=(MIT)
-depends=(ruby ruby-actionmailer ruby-activesupport)
+depends=(ruby ruby-actionmailer-2 ruby-activesupport-2)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)

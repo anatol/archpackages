@@ -23,7 +23,7 @@ pkgver() {
 
 prepare() {
   cd pkgoutofdate
-  sed -i "s|./parse_pkgbuild.sh|/usr/share/pkgoutofdate/parse_pkgbuild.sh|" pkgoutofdate.rb
+  sed -i 's|./parse_pkgbuild.sh|/usr/share/pkgoutofdate/parse_pkgbuild.sh|' pkgoutofdate.rb
 }
 
 package() {

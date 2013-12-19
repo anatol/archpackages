@@ -10,7 +10,7 @@ license=(BSD)
 makedepends=(git cmake)
 source=(git://github.com/evilsocket/libgibsonclient
         git://github.com/antirez/linenoise)
-md5sums=('SKIP'
+sha1sums=('SKIP'
          'SKIP')
 
 pkgver() {

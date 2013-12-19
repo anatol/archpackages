@@ -10,7 +10,7 @@ license=(GPL2)
 makedepends=(git)
 conflicts=(iptables)
 source=(git://git.netfilter.org/iptables-nftables)
-md5sums=('SKIP')
+sha1sums=('SKIP')
 
 pkgver() {
   cd iptables-nftables

@@ -17,7 +17,7 @@ source=(git://github.com/biometrics/likely.git
         git://github.com/Itseez/opencv.git
         git://git.gitorious.org/qcustomplot/qcustomplot.git
         git://github.com/bagder/curl.git)
-md5sums=('SKIP'
+sha1sums=('SKIP'
          'SKIP'
          'SKIP'
          'SKIP'

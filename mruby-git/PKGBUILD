@@ -9,7 +9,7 @@ url=https://github.com/mruby/mruby
 license=(MIT)
 makedepends=(git bison ruby)
 options=(staticlibs)
-source=('mruby::git://github.com/mruby/mruby.git')
+source=(git://github.com/mruby/mruby.git)
 md5sums=('SKIP')
 
 pkgver() {

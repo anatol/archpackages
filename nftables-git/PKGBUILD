@@ -9,7 +9,7 @@ url=http://netfilter.org/projects/nftables/
 license=(GPL2)
 depends=(libmnl gmp libnftables-git ncurses)
 makedepends=(git)
-source=('nftables::git://git.netfilter.org/nftables')
+source=(git://git.netfilter.org/nftables)
 md5sums=('SKIP')
 
 pkgver() {

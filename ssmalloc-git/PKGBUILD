@@ -8,22 +8,22 @@ arch=(x86_64)
 url=http://ipads.se.sjtu.edu.cn/ssmalloc
 license=(BSD)
 makedepends=(git)
-source=('ssmalloc::git://github.com/Naruil/SSMalloc.git')
+source=(git://github.com/Naruil/SSMalloc.git)
 md5sums=('SKIP')
 
 pkgver() {
-  cd ssmalloc
+  cd SSMalloc
   # ssmalloc repo does not have any git tags yet
   echo r$(git rev-list --count master).$(git rev-parse --short master)
 }
 
 build() {
-  cd ssmalloc
+  cd SSMalloc
   make
 }
 
 package() {
-  cd ssmalloc
+  cd SSMalloc
   mkdir -p $pkgdir/usr/lib
   install libssmalloc.a $pkgdir/usr/lib
   install libssmalloc.so $pkgdir/usr/lib

@@ -10,13 +10,13 @@ license=(Apache2)
 depends=(xz libjpeg libpng libtiff jasper ncurses)
 makedepends=(git cmake)
 options=(!emptydirs)
-source=('likely::git://github.com/biometrics/likely.git'
-        'data::git://github.com/biometrics/likely-data.git'
-        'llvm::git://github.com/llvm-mirror/llvm.git'
-        'lua::git://github.com/LuaDist/lua.git'
-        'opencv::git://github.com/Itseez/opencv.git'
-        'qcustomplot::git://git.gitorious.org/qcustomplot/qcustomplot.git'
-        'curl::git://github.com/bagder/curl.git')
+source=(git://github.com/biometrics/likely.git
+        git://github.com/biometrics/likely-data.git
+        git://github.com/llvm-mirror/llvm.git
+        git://github.com/LuaDist/lua.git
+        git://github.com/Itseez/opencv.git
+        git://git.gitorious.org/qcustomplot/qcustomplot.git
+        git://github.com/bagder/curl.git)
 md5sums=('SKIP'
          'SKIP'
          'SKIP'

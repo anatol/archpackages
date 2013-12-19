@@ -8,8 +8,8 @@ arch=(i686 x86_64)
 url=http://gibson-db.in/
 license=(BSD)
 makedepends=(git cmake)
-source=('gibson::git://github.com/evilsocket/libgibsonclient'
-        'linenoise::git://github.com/antirez/linenoise')
+source=(git://github.com/evilsocket/libgibsonclient
+        git://github.com/antirez/linenoise)
 md5sums=('SKIP'
          'SKIP')
 

@@ -11,7 +11,7 @@ license=(GPL2)
 depends=(fuse)
 makedepends=(git)
 install=tup.install
-source=('tup::git://github.com/gittup/tup.git')
+source=(git://github.com/gittup/tup.git)
 sha512sums=('SKIP' )
 
 pkgver() {

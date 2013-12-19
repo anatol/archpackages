@@ -27,6 +27,6 @@ prepare() {
 package() {
   cd vmd
 
-  install -d $pkgdir/usr/bin
-  install -m755 -t $pkgdir/usr/bin vmd.pl
+  install -d "$pkgdir/usr/bin"
+  install -m755 -t "$pkgdir/usr/bin" vmd.pl
 }

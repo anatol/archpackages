@@ -8,7 +8,7 @@ arch=(i686 x86_64)
 url=https://github.com/slash-lang/slash
 license=(MIT)
 depends=(gmp pcre curl libgcrypt libmariadbclient yajl discount)
-makedepends=(ruby flex)
+makedepends=(git ruby flex)
 source=('slash::git://github.com/slash-lang/slash.git')
 md5sums=('SKIP')
 

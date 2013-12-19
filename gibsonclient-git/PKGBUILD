@@ -7,7 +7,7 @@ pkgdesc='Client for Gibson - a high efficiency, tree based memory cache server.'
 arch=(i686 x86_64)
 url=http://gibson-db.in/
 license=(BSD)
-makedepends=(cmake)
+makedepends=(git cmake)
 source=('gibson::git://github.com/evilsocket/libgibsonclient'
         'linenoise::git://github.com/antirez/linenoise')
 md5sums=('SKIP'

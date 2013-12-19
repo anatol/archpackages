@@ -8,6 +8,7 @@ arch=(any)
 url=https://github.com/genaev/vmd
 license=('GPL2')
 depends=(perl perl-vk-app perl-file-homedir perl-thread-pool-simple)
+makedepends=(git)
 source=('vmd::git://github.com/genaev/vmd.git'
         hide-config-dir.diff)
 sha1sums=('SKIP'

@@ -8,6 +8,7 @@ arch=(i686 x86_64)
 url=http://netfilter.org/projects/nftables/
 license=(GPL2)
 depends=(libmnl)
+makedepends=(git)
 source=('libnftables::git://git.netfilter.org/libnftables')
 sha1sums=('SKIP')
 

@@ -7,8 +7,7 @@ pkgdesc='A Low-latency, Locality-conscious Memory Allocator with Stable Performa
 arch=(x86_64)
 url=http://ipads.se.sjtu.edu.cn/ssmalloc
 license=('BSD')
-depends=()
-makedepends=()
+makedepends=(git)
 source=('ssmalloc::git://github.com/Naruil/SSMalloc.git')
 md5sums=('SKIP')
 

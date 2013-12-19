@@ -8,6 +8,7 @@ arch=(any)
 url=https://github.com/anatol/pkgoutofdate
 license=(GPL3)
 depends=(ruby)
+makedepends=(git)
 optdepends=(
   'abs: If you want to check ABS packages'
 )

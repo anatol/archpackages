@@ -9,6 +9,7 @@ arch=(i686 x86_64)
 url=https://github.com/fpmurphy/Various/tree/master/uefivars-2.0
 license=(GPL)
 depends=(efibootmgr)
+makedepends=(git)
 source=('various::git://github.com/fpmurphy/Various.git')
 md5sums=('SKIP')
 

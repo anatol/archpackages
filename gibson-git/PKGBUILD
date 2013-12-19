@@ -7,7 +7,7 @@ pkgdesc='Gibson is a high efficiency, tree based memory cache server.'
 arch=(i686 x86_64)
 url=http://gibson-db.in/
 license=(BSD)
-makedepends=(cmake)
+makedepends=(git cmake)
 backup=(etc/gibson/gibson.conf)
 source=('gibson::git://github.com/evilsocket/gibson.git#branch=unstable'
         gibson.service)

@@ -18,12 +18,12 @@ source=(https://github.com/jashkenas/coffee-script/archive/$pkgver.tar.gz)
 sha256sums=('59fa721aa1968603822058d8f5d8077595fb108a47ccdb95d553edcdbc67e321')
 
 check() {
-  cd coffee-script-$pkgver
+  cd $pkgname-$pkgver
   bin/cake test:browser
 }
 
 package() {
-  cd coffee-script-$pkgver
+  cd $pkgname-$pkgver
 
   # cake writes bullshit to ~/.noode-libraries, so set HOME to local dir
   HOME="$PWD" bin/cake --prefix "$pkgdir/usr/" install

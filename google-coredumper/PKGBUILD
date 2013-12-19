@@ -4,7 +4,7 @@ pkgver=1.2.1
 pkgrel=1
 pkgdesc='Library can be compiled into applications to create core dumps of the running program -- without terminating.'
 url=https://code.google.com/p/google-coredumper/
-license=('GPL')
+license=(GPL)
 arch=(i686 x86_64)
 depends=()
 # Upstream is currently broken.

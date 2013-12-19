@@ -4,7 +4,7 @@
 pkgname=uefivars-git
 pkgver=20130101
 pkgrel=1
-pkgdesc="A tool to populate UEFI Runtime Variables. Requires the kernel module efivars to be loaded."
+pkgdesc='A tool to populate UEFI Runtime Variables. Requires the kernel module efivars to be loaded.'
 arch=(i686 x86_64)
 url=https://github.com/fpmurphy/Various/tree/master/uefivars-2.0
 license=(GPL)

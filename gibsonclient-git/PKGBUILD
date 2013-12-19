@@ -3,7 +3,7 @@
 pkgname=gibsonclient-git
 pkgver=r29.2bd52b0
 pkgrel=1
-pkgdesc="Client for Gibson - a high efficiency, tree based memory cache server."
+pkgdesc='Client for Gibson - a high efficiency, tree based memory cache server.'
 arch=(i686 x86_64)
 url=http://gibson-db.in/
 license=(BSD)

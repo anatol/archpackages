@@ -25,12 +25,12 @@ prepare() {
 }
 
 build() {
-  cd "$pkgname-$pkgver/build"
+  cd $pkgname-$pkgver/build
   make linux
 }
 
 check() {
-  cd "$pkgname-$pkgver/build"
+  cd $pkgname-$pkgver/build
   make tests
 }
 
@@ -38,7 +38,7 @@ package() {
   install -D -m644 mongoose.conf "$pkgdir/etc/mongoose/mongoose.conf"
   install -D -m644 mongoose.service "$pkgdir/usr/lib/systemd/system/mongoose.service"
 
-  cd "$pkgname-$pkgver"
+  cd $pkgname-$pkgver
   # install the docs
   install -d "$pkgdir/usr/share/mongoose"
   install -m644 UserManual.md README.md "$pkgdir/usr/share/mongoose"

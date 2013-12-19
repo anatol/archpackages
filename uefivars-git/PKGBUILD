@@ -10,7 +10,7 @@ url=https://github.com/fpmurphy/Various/tree/master/uefivars-2.0
 license=(GPL)
 depends=(efibootmgr)
 makedepends=(git)
-source=(git://github.com/fpmurphy/Various.git)
+source=(git://github.com/fpmurphy/Various)
 sha1sums=(SKIP)
 
 pkgver() {

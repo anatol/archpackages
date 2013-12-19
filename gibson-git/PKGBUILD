@@ -9,7 +9,7 @@ url=http://gibson-db.in/
 license=(BSD)
 makedepends=(git cmake)
 backup=(etc/gibson/gibson.conf)
-source=(git://github.com/evilsocket/gibson.git#branch=unstable
+source=(git://github.com/evilsocket/gibson#branch=unstable
         gibson.service)
 sha1sums=(SKIP
           e78f6f4988c56f91dfb287f83cf9ded0183ef091)

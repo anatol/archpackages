@@ -14,8 +14,8 @@ makedepends=(git cmake clang)
 # python2-pexpect dependency is removed in 1.6
 checkdepends=(python2-daemon python2-yaml python2-pexpect)
 source=(git://github.com/tarantool/tarantool#branch=stable
-        git://github.com/mpx/lua-cjson.git
-        git://github.com/tarantool/luajit.git
+        git://github.com/mpx/lua-cjson
+        git://github.com/tarantool/luajit
         tarantool.systemd)
 sha1sums=(SKIP
           SKIP

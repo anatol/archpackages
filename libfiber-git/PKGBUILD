@@ -8,7 +8,7 @@ arch=(i686 x86_64)
 url=https://github.com/brianwatling/libfiber
 license=(Not specified)
 makedepends=(git cmake)
-source=(git://github.com/brianwatling/libfiber.git)
+source=(git://github.com/brianwatling/libfiber)
 sha1sums=(SKIP)
 
 pkgver() {

@@ -5,7 +5,7 @@
 
 pkgname=v8
 # use http://omahaproxy.appspot.com/ to find stable v8 version
-pkgver=3.21.18.13
+pkgver=3.21.18.9
 pkgrel=1
 pkgdesc='Fast and modern Javascript engine'
 arch=(i686 x86_64)
@@ -16,7 +16,7 @@ makedepends=(subversion python2 wget)
 # unfortunately https://github.com/$pkgname/$pkgname does not contain all tags
 source=(https://commondatastorage.googleapis.com/chromium-browser-official/$pkgname-$pkgver.tar.bz2
         v8.pc)
-sha256sums=('356f4b3487dd21ff9479d72a229970188df4492c746468dfe06d5000cfc20ff5'
+sha256sums=('d5ff8c7e19c0f7e38c089896d4173569991c923ae2e4de6cb4aba49961ed1706'
             '2b054309df9af9fb2e3e14527e88360b44745649b4866e592fb357ac90935f5d')
 
 [[ "$CARCH" = 'i686' ]]   && ARCH=ia32

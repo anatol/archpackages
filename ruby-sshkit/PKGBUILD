@@ -13,7 +13,7 @@ depends=(ruby ruby-net-ssh ruby-net-scp ruby-term-ansicolor)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)
-sha1sums=('e544045edb3d73b9b01ea686dee36f734d8e4af3')
+sha1sums=(e544045edb3d73b9b01ea686dee36f734d8e4af3)
 
 package() {
   local _gemdir="$(ruby -e'puts Gem.default_dir')"

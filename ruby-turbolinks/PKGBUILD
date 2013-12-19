@@ -13,7 +13,7 @@ depends=(ruby ruby-coffee-rails)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)
-sha1sums=('47fc3a41fb3c670356145f3835649f436ef66355')
+sha1sums=(47fc3a41fb3c670356145f3835649f436ef66355)
 
 package() {
   local _gemdir="$(ruby -e'puts Gem.default_dir')"

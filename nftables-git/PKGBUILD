@@ -10,7 +10,7 @@ license=(GPL2)
 depends=(libmnl gmp libnftables-git ncurses)
 makedepends=(git)
 source=(git://git.netfilter.org/nftables)
-sha1sums=('SKIP')
+sha1sums=(SKIP)
 
 pkgver() {
   cd nftables

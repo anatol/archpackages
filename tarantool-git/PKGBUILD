@@ -17,10 +17,10 @@ source=(git://github.com/tarantool/tarantool#branch=stable
         git://github.com/mpx/lua-cjson.git
         git://github.com/tarantool/luajit.git
         tarantool.systemd)
-sha1sums=('SKIP'
-          'SKIP'
-          'SKIP'
-          'ad36cc26a66a50e8537570bfed5b620c775a9f85')
+sha1sums=(SKIP
+          SKIP
+          SKIP
+          ad36cc26a66a50e8537570bfed5b620c775a9f85)
 
 pkgver() {
   cd tarantool

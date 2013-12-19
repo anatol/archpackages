@@ -17,13 +17,13 @@ source=(git://github.com/biometrics/likely.git
         git://github.com/Itseez/opencv.git
         git://git.gitorious.org/qcustomplot/qcustomplot.git
         git://github.com/bagder/curl.git)
-sha1sums=('SKIP'
-         'SKIP'
-         'SKIP'
-         'SKIP'
-         'SKIP'
-         'SKIP'
-         'SKIP')
+sha1sums=(SKIP
+          SKIP
+          SKIP
+          SKIP
+          SKIP
+          SKIP
+          SKIP)
 
 pkgver() {
   cd likely

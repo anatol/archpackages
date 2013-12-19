@@ -13,7 +13,7 @@ depends=(ruby)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)
-sha1sums=('c1a008937c64da7f8ec4098fc96148b176a693de')
+sha1sums=(c1a008937c64da7f8ec4098fc96148b176a693de)
 
 package() {
   local _gemdir="$(ruby -e'puts Gem.default_dir')"

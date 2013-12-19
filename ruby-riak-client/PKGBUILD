@@ -13,7 +13,7 @@ depends=(ruby ruby-i18n ruby-builder ruby-beefcake-0.3 ruby-multi_json ruby-inne
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)
-sha1sums=('d3112f88c56de54b69b6a63d1034cb251f46f3be')
+sha1sums=(d3112f88c56de54b69b6a63d1034cb251f46f3be)
 
 package() {
   local _gemdir="$(ruby -e'puts Gem.default_dir')"

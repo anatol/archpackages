@@ -7,7 +7,7 @@ pkgdesc='an in-memory database designed to store the most volatile and highly ac
 arch=(i686 x86_64)
 url=http://www.tarantool.org
 license=(BSD)
-backup=('etc/tarantool/tarantool.cfg')
+backup=(etc/tarantool/tarantool.cfg)
 depends=(readline ncurses)
 # gcc has problems with HEAD tarantool
 makedepends=(git cmake clang)

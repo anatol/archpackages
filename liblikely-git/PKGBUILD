@@ -1,7 +1,7 @@
 # Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 pkgname=liblikely-git
-pkgver=r550.26770da
+pkgver=r582.58f1e78
 pkgrel=1
 pkgdesc='An image recognition runtime for heterogenous architectures'
 arch=(i686 x86_64)
@@ -10,7 +10,8 @@ license=(Apache2)
 depends=(xz libjpeg libpng libtiff jasper ncurses)
 makedepends=(git cmake)
 options=(!emptydirs)
-source=(git://github.com/biometrics/likely
+_branch=gh-pages
+source=(git://github.com/biometrics/likely#branch=$_branch
         git://github.com/biometrics/likely-data
         git://github.com/llvm-mirror/llvm
         git://github.com/LuaDist/lua
@@ -28,7 +29,7 @@ sha1sums=(SKIP
 pkgver() {
   cd likely
   # liblikely repo does not have any git tags yet
-  echo r$(git rev-list --count master).$(git rev-parse --short master)
+  echo r$(git rev-list --count $_branch).$(git rev-parse --short $_branch)
 }
 
 prepare() {

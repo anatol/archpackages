@@ -26,7 +26,7 @@ prepare() {
 
 build() {
   cd $pkgname-$pkgver.fb
-  make
+  make all librocksdb.so
 }
 
 # The are some tests are broken in 2.6 release

@@ -8,13 +8,13 @@ pkgver=2.2.0
 pkgrel=1
 pkgdesc='Ruby CoffeeScript Compiler'
 arch=(any)
-url='https://github.com/josh/ruby-coffee-script'
+url='http://github.com/josh/ruby-coffee-script'
 license=(MIT)
 depends=(ruby ruby-coffee-script-source ruby-execjs)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)
-sha1sums=(f63e4a5a86295e3011c9e561fe8a9177468abb08)
+sha1sums=('f63e4a5a86295e3011c9e561fe8a9177468abb08')
 
 package() {
   local _gemdir="$(ruby -e'puts Gem.default_dir')"

@@ -2,19 +2,19 @@
 # Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 # Contributor: Nathan Phillip Brink <binki@gentoo.org>
 
-_gemname=coffee-script
+_gemname=jquery-rails
 pkgname=ruby-$_gemname
-pkgver=2.2.0
+pkgver=3.0.4
 pkgrel=1
-pkgdesc='Ruby CoffeeScript Compiler'
+pkgdesc='Use jQuery with Rails 3'
 arch=(any)
-url='https://github.com/josh/ruby-coffee-script'
+url='http://rubygems.org/gems/jquery-rails'
 license=(MIT)
-depends=(ruby ruby-coffee-script-source ruby-execjs)
+depends=(ruby ruby-railties ruby-thor)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)
-sha1sums=(f63e4a5a86295e3011c9e561fe8a9177468abb08)
+sha1sums=('64047855d01d002c9dfb923f5c9e70cb7252a082')
 
 package() {
   local _gemdir="$(ruby -e'puts Gem.default_dir')"

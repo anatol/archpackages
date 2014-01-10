@@ -5,7 +5,7 @@
 
 pkgname=mongoose
 pkgver=5.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Small and quick-to-use web server; https/php/cgi support'
 arch=(i686 x86_64)
 license=(MIT)
@@ -23,15 +23,15 @@ sha1sums=('d05e46fc096a76c1b5c849ee4c5f644672012c88'
           '01e409a2e4382407839d0470b758d6fb33a16548')
 
 prepare() {
-  export COPT="-DNO_SSL_DL -DUSE_LUA -lm -llua -lcrypto -lssl $CFLAGS $LDFLAGS"
-
   cd $pkgname-$pkgver
   patch -p 1 < ../fix_tests.diff
 }
 
 build() {
+  # The package provides several binaries: pure mongoose, with lua, sqlite, ssl enabled.
+  # Should we ship the simplest or the fat binary?
   cd $pkgname-$pkgver/build
-  make mongoose
+  CFLAGS_EXTRA="$CFLAGS $LDFLAGS" make mongoose
 }
 
 check() {

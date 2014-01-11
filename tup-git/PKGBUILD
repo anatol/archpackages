@@ -12,7 +12,7 @@ depends=(fuse)
 makedepends=(git)
 install=tup.install
 source=(git://github.com/gittup/tup)
-sha512sums=(SKIP)
+sha512sums=('SKIP')
 
 pkgver() {
   cd tup

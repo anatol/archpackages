@@ -11,7 +11,7 @@ license=(LGPL)
 makedepends=(git)
 #options=(staticlibs)
 source=(git://github.com/davidmoreno/onion)
-sha1sums=(SKIP)
+sha1sums=('SKIP')
 
 pkgver() {
   cd onion

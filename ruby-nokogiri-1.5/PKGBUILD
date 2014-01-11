@@ -13,7 +13,7 @@ depends=(libxml2 libxslt ruby)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)
-sha1sums=(890c9e70da7c012a236c7e56675dbf191012a612)
+sha1sums=('890c9e70da7c012a236c7e56675dbf191012a612')
 
 package() {
   local _gemdir="$(ruby -e'puts Gem.default_dir')"

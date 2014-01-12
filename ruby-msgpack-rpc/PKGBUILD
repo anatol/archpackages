@@ -4,12 +4,12 @@
 _gemname=msgpack-rpc
 pkgname=ruby-$_gemname
 pkgver=0.5.1
-pkgrel=1
+pkgrel=2
 pkgdesc='MessagePack-RPC, asynchronous RPC library using MessagePack'
 arch=(any)
 url='http://msgpack.org/'
 license=(Apache2)
-depends=(ruby ruby-msgpack ruby-cool.io)
+depends=(ruby ruby-msgpack-0.4 ruby-cool.io-1.1)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)

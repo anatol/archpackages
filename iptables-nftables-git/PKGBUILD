@@ -14,7 +14,7 @@ sha1sums=('SKIP')
 
 pkgver() {
   cd iptables-nftables
-  git describe | sed -E 's/^v//;s/([^-]*-g)/r\1/;s/-/./g'
+  git describe | sed 's/^v//; s/-/.r/; s/-/./'
 }
 
 build() {

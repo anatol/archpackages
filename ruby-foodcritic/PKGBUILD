@@ -1,0 +1,27 @@
+# Maintainer: Alfredo Palhares <masterkorp@masterkorp.net>
+
+_gemname=foodcritic
+pkgname=ruby-$_gemname
+pkgver=3.0.3
+pkgrel=2
+pkgdesc="Lint tool for Opscode Chef cookbooks."
+arch=('any')
+url="http://acrmp.github.com/foodcritic"
+license=('MIT')
+depends=(
+  'ruby'
+  'ruby-gherkin-2.11'
+  'ruby-nokogiri-1.5'
+  'ruby-treetop'
+  'ruby-yajl-ruby-1.1'
+  'ruby-erubis>=0')
+makedepends=('rubygems')
+source=(http://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
+md5sums=('e60110a1cd920adbc521bf43a811b7ff')
+
+package() {
+  cd "$srcdir"
+  local _gemdir="$(ruby -e'puts Gem.default_dir')"
+  gem install --ignore-dependencies --no-user-install -i "$pkgdir$_gemdir" -n "$pkgdir/usr/bin" $_gemname-$pkgver.gem
+}

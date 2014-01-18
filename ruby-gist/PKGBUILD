@@ -1,0 +1,21 @@
+# Maintainer: Alfredo Palhares <masterkorp@masterkorp.net>
+
+_gemname=gist
+pkgname=ruby-$_gemname
+pkgver=4.1.1
+pkgrel=1
+pkgdesc="Creates Gists from STDIN or files."
+arch=('any')
+url="http://github.com/defunkt/gist"
+license=('MIT')
+depends=('ruby')
+makedepends=('rubygems')
+source=(http://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
+md5sums=('c5124c6746ea38e12f7421e834c19b58')
+
+package() {
+  cd "$srcdir"
+  local _gemdir="$(ruby -e'puts Gem.default_dir')"
+  gem install --ignore-dependencies --no-user-install -i "$pkgdir$_gemdir" -n "$pkgdir/usr/bin" $_gemname-$pkgver.gem
+}

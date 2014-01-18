@@ -1,0 +1,24 @@
+# Maintainer: Alfredo Palhares <masterkorp@masterkorp.net>
+# Contributor: mtorromeo
+# Contrubutor: eagletmt <eagletmt@gmail.com>
+pkgname=ruby-diff-lcs
+_realname=diff-lcs
+pkgver=1.2.5
+pkgrel=1
+pkgdesc='Provides a list of changes that represent the difference between two sequenced collections.'
+arch=("any")
+url='http://diff-lcs.rubyforge.org/'
+license=('GPL' 'PerlArtistic' 'MIT')
+depends=("ruby")
+makedepends=('rubygems')
+source=(https://rubygems.org/downloads/$_realname-$pkgver.gem)
+noextract=($_realname-$pkgver.gem)
+md5sums=('7172cb271324fa944d9fbea5fe1f7344')
+
+package() {
+  cd "$srcdir"
+  local _gemdir="$(ruby -rubygems -e 'puts Gem.default_dir')"
+  gem install --no-user-install --ignore-dependencies -i "$pkgdir$_gemdir" -n "$pkgdir/usr/bin" $_realname-$pkgver.gem
+}
+
+# vim:set ts=2 sw=2 et:

@@ -1,0 +1,25 @@
+# Maintainer: Alfredo Palhares <masterkorp@masterkorp.net>
+
+_gemname=fauxhai
+pkgname=ruby-$_gemname
+pkgver=2.0.1
+pkgrel=1
+pkgdesc="Easily mock out ohai data"
+arch=('any')
+url="https://github.com/customink/fauxhai"
+license=('MIT')
+depends=(
+  'ruby'
+  'ruby-net-ssh'
+  'ruby-ohai'
+)
+makedepends=('rubygems')
+source=(http://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
+md5sums=('49ab2050bf6311b4b536b51776c4f3a3')
+
+package() {
+  cd "$srcdir"
+  local _gemdir="$(ruby -e'puts Gem.default_dir')"
+  gem install --ignore-dependencies --no-user-install -i "$pkgdir$_gemdir" -n "$pkgdir/usr/bin" $_gemname-$pkgver.gem
+}

@@ -1,0 +1,21 @@
+# Maintainer: Alfredo Palhares <masterkopr@masterkorp.net>
+
+_gemname=systemu
+pkgname=ruby-$_gemname
+pkgver=2.6.0
+pkgrel=1
+pkgdesc="systemu"
+arch=('any')
+url="https://github.com/ahoward/systemu"
+license=('MIT')
+depends=('ruby')
+makedepends=('rubygems')
+source=(http://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
+sha1sums=('5af9dabf8b5e41ceee9037fe0b443e8a38137baf')
+
+package() {
+  cd "$srcdir"
+  local _gemdir="$(ruby -e'puts Gem.default_dir')"
+  gem install --ignore-dependencies --no-user-install -i "$pkgdir$_gemdir" $_gemname-$pkgver.gem
+}

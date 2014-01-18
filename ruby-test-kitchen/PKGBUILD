@@ -1,0 +1,28 @@
+# Maintainer: Alfredo Palhares <masterkorp@masterkorp.net>
+
+_gemname=test-kitchen
+pkgname=ruby-$_gemname
+pkgver=1.1.1
+pkgrel=1
+pkgdesc="Easily provision test environments for integration testing with Chef."
+arch=('any')
+url="https://github.com/opscode/test-kitchen"
+license=('MIT')
+depends=(
+  'ruby'
+  'ruby-mixlib-shellout'
+  'ruby-net-scp'
+  'ruby-safe_yaml-0'
+  'ruby-thor'
+)
+makedepends=('rubygems')
+source=(http://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
+sha1sums=('3c3a0494b574cdcc974ad1efdf72248112e0d388')
+
+
+package() {
+  cd "$srcdir"
+  local _gemdir="$(ruby -e'puts Gem.default_dir')"
+  gem install --ignore-dependencies --no-user-install -i "$pkgdir$_gemdir" -n "$pkgdir/usr/bin" $_gemname-$pkgver.gem
+}

@@ -1,0 +1,30 @@
+# Maintainer: Alfredo Palhares <masterkorp@masterkorp.net>
+# Please submit any pacthes to:
+# https://github.com/masterkorp/pkgbuilds
+
+_gemname=capistrano
+pkgname=ruby-$_gemname
+pkgver=3.0.1
+pkgrel=1
+pkgdesc="Capistrano - Welcome to easy deployment with Ruby over SSH"
+arch=('any')
+url="http://github.com/capistrano/capistrano"
+license=('Custom')
+depends=('ruby'
+  'ruby-rake'
+  'ruby-i18n'
+  'ruby-sshkit'
+)
+makedepends=('rubygems')
+source=(http://rubygems.org/downloads/$_gemname-$pkgver.gem LICENSE)
+noextract=($_gemname-$pkgver.gem)
+md5sums=('40194dc6a5f89f78c105e30718a157cd'
+         'c3d11f207143bc748eefe1aec3538185')
+
+package() {
+  cd "$srcdir"
+  local _gemdir="$(ruby -e'puts Gem.default_dir')"
+  mkdir -p "$pkgdir/usr/share/licenses/$pkgname/"
+  install -m644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/"
+  gem install --ignore-dependencies --no-user-install -i "$pkgdir$_gemdir" -n "$pkgdir/usr/bin" $_gemname-$pkgver.gem
+}

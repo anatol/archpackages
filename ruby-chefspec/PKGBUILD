@@ -1,0 +1,26 @@
+# Maintainer: Alfredo Palhares <masterkorp@masterkorp.net>
+
+_gemname=chefspec
+pkgname=ruby-$_gemname
+pkgver=3.0.2
+pkgrel=1
+pkgdesc="Write RSpec examples for Opscode Chef cookbooks"
+arch=('any')
+url="https://github.com/acrmp/chefspec"
+license=('MIT')
+depends=(
+  'ruby'
+  'ruby-rspec'
+  'ruby-fauxhai'
+  'ruby-chef'
+)
+makedepends=('rubygems')
+source=(http://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
+md5sums=('87999743db4c3bb631d4401c02b951fc')
+
+package() {
+  cd "$srcdir"
+  local _gemdir="$(ruby -e'puts Gem.default_dir')"
+  gem install --ignore-dependencies --no-user-install -i "$pkgdir$_gemdir" -n "$pkgdir/usr/bin" $_gemname-$pkgver.gem
+}

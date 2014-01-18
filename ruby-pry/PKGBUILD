@@ -1,0 +1,21 @@
+# Maintainer: Alfredo Palhares <masterkorp@masterkorp.net>
+
+_gemname=pry
+pkgname=ruby-$_gemname
+pkgver=0.9.12.2
+pkgrel=1
+pkgdesc="An IRB alternative and runtime developer console"
+arch=('any')
+url="http://pry.github.com"
+license=('MIT')
+depends=('ruby' 'ruby-coderay>=1.0.5' 'ruby-slop>=3.4' 'ruby-method_source>=0.8')
+makedepends=('rubygems')
+source=(http://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
+md5sums=('c5d654869df4ba75715a399935fc8114')
+
+package() {
+  cd "$srcdir"
+  local _gemdir="$(ruby -e'puts Gem.default_dir')"
+  gem install --ignore-dependencies --no-user-install -i "$pkgdir$_gemdir" -n "$pkgdir/usr/bin" $_gemname-$pkgver.gem
+}

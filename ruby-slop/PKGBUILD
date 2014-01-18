@@ -1,0 +1,21 @@
+# Maintainer: Alfredo Palhares <masterkorp@masterkorp.net>
+
+_gemname=slop
+pkgname=ruby-$_gemname
+pkgver=3.4.6
+pkgrel=1
+pkgdesc="Option gathering made easy"
+arch=('any')
+url="http://github.com/injekt/slop"
+license=('MIT')
+depends=('ruby')
+makedepends=('rubygems')
+source=(http://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
+md5sums=('a7c04794a673c5953a73dd3f0b5bf043')
+
+package() {
+  cd "$srcdir"
+  local _gemdir="$(ruby -e'puts Gem.default_dir')"
+  gem install --ignore-dependencies --no-user-install -i "$pkgdir$_gemdir" -n "$pkgdir/usr/bin" $_gemname-$pkgver.gem
+}

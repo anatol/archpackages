@@ -1,0 +1,21 @@
+# Maintainer: Alfredo Palhares <masterkorp@masterkorp.net>
+
+_gemname=librarian
+pkgname=ruby-$_gemname
+pkgver=0.1.1
+pkgrel=1
+pkgdesc="Librarian"
+arch=('any')
+url="https://github.com/applicationsonline/librarian"
+license=('MIT')
+depends=('ruby' 'ruby-thor>=0.15' 'ruby-highline>=0')
+makedepends=('rubygems')
+source=(http://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
+sha1sums=('f6fe9119fea39352078439bdf5c09479fb386786')
+
+package() {
+  cd "$srcdir"
+  local _gemdir="$(ruby -e'puts Gem.default_dir')"
+  gem install --ignore-dependencies --no-user-install -i "$pkgdir$_gemdir" -n "$pkgdir/usr/bin" $_gemname-$pkgver.gem
+}

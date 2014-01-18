@@ -1,0 +1,22 @@
+# Maintainer: Alfredo Palhares <masterkorp@masterkorp.net>
+
+_gemname=knife-github-cookbooks
+pkgname=ruby-$_gemname
+pkgver=0.1.8
+pkgrel=1
+pkgdesc="Github Cookbook installation support for Chef's Knife Command"
+arch=('any')
+url="https://github.com/nphase/knife-github-cookbooks"
+license=('Apache')
+depends=('ruby' 'ruby-launchy>=0.4.0' 'ruby-chef>=0')
+makedepends=('rubygems')
+source=(http://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
+md5sums=('f8ec3c7129b1a8a5bd5c8df654fea5ad')
+
+
+package() {
+  cd "$srcdir"
+  local _gemdir="$(ruby -e'puts Gem.default_dir')"
+  gem install --ignore-dependencies --no-user-install -i "$pkgdir$_gemdir" -n "$pkgdir/usr/bin" $_gemname-$pkgver.gem
+}

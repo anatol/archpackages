@@ -1,9 +1,10 @@
 # Maintainer: Alfredo Palhares <masterkorp@masterkorp.net>
+# Contributor: Alfredo Palhares <masterkorp@masterkorp.net>
 
 _gemname=knife-digital_ocean
 pkgname=ruby-$_gemname
 pkgver=0.1.1
-pkgrel=2
+pkgrel=3
 pkgdesc="A plugin for chef's knife to manage instances of DigitalOcean servers"
 arch=('any')
 url="https://github.com/rmoriz/knife-digital_ocean"

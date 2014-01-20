@@ -1,7 +1,7 @@
 # Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 
-pkgname=libnftables-git
-pkgver=r306.2307124
+pkgname=libnftnl-git
+pkgver=1.0.0.r1.g91264d8
 pkgrel=1
 pkgdesc='Netfilter nf_tables infrastructure library'
 arch=(i686 x86_64)
@@ -9,28 +9,27 @@ url='http://netfilter.org/projects/nftables/'
 license=(GPL2)
 depends=(libmnl)
 makedepends=(git)
-source=(git://git.netfilter.org/libnftables)
+source=(git://git.netfilter.org/libnftnl)
 sha1sums=('SKIP')
 
 pkgver() {
-  cd libnftables
-  # repo does not have any git tags yet
-  echo r$(git rev-list --count master).$(git rev-parse --short master)
+  cd libnftnl
+  git describe | sed 's/^libnftnl-//; s/-/.r/; s/-/./'
 }
 
 build() {
-  cd libnftables
+  cd libnftnl
   ./autogen.sh
   ./configure --prefix=/usr
   make
 }
 
 check() {
-  cd libnftables
+  cd libnftnl
   make check
 }
 
 package() {
-  cd libnftables
+  cd libnftnl
   make DESTDIR="$pkgdir" install
 }

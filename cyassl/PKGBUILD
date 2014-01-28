@@ -1,14 +1,14 @@
 # Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 pkgname=cyassl
-pkgver=2.8.5a
+pkgver=2.8.6
 pkgrel=1
 pkgdesc='A small, fast, portable implementation of TLS/SSL for embedded devices to the cloud'
 arch=(i686 x86_64)
 license=(GPL)
 url='https://www.yassl.com/'
 source=(https://github.com/cyassl/cyassl/archive/v$pkgver.zip)
-sha1sums=('1a195a2516ffe3b660a59dccebb8e27fbb8d2e2e')
+sha1sums=('900ffee18e457de32675c49069d02e9fef1323e7')
 
 build() {
   cd $pkgname-$pkgver

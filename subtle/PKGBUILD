@@ -33,7 +33,7 @@ prepare() {
     's/RbConfig::CONFIG\["sitelibdir"\]/RbConfig::CONFIG\["vendorlibdir"\]/' \
     -i Rakefile
 
-  patch -p1 < ../do_not_relink_binaries_on_install.diff
+  patch -p1 < "$srcdir/do_not_relink_binaries_on_install.diff"
 }
 
 build() {

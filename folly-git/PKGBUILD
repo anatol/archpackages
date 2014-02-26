@@ -1,0 +1,36 @@
+# Maintainer: Joel Teichroeb <joel@teichroeb.net>
+# Contributor: Jonas Heinrich <onny@project-insanity.org>
+
+pkgname=folly-git
+pkgver=r607.ad1086f
+pkgrel=1
+pkgdesc='Folly is an open-source C++ library developed and used at Facebook'
+arch=(i686 x86_64)
+url='https://github.com/facebook/folly'
+license=(Apache)
+depends=(google-glog google-gflags double-conversion)
+makedepends=(git boost)
+source=(git+https://github.com/facebook/folly.git)
+md5sums=('SKIP')
+
+pkgver() {
+  cd folly
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+  CPPFLAGS="$CPPFLAGS -I/usr/include/double-conversion"
+
+  cd folly/folly
+  autoreconf --install
+  ./configure
+  #CPPFLAGS=-I/usr/include/double-conversion ./configure
+  #sed -i 's/march=i686/march=native/g' Makefile
+  make
+}
+
+package() {
+  cd folly/folly
+  make DESTDIR="$pkgdir" install
+}
+

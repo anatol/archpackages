@@ -7,7 +7,7 @@ pkgdesc='A User Space Threading Library Supporting Multi-Core Systems'
 arch=(i686 x86_64)
 url='https://github.com/brianwatling/libfiber'
 license=(Not specified)
-makedepends=(git cmake)
+makedepends=(git)
 source=(git://github.com/brianwatling/libfiber)
 sha1sums=('SKIP')
 

@@ -9,7 +9,7 @@ url='http://www.tarantool.org'
 license=(BSD)
 backup=(etc/tarantool/tarantool.cfg)
 install=tarantool.install
-depends=(readline ncurses termcap)
+depends=(readline ncurses)
 # gcc has problems with HEAD tarantool
 makedepends=(git cmake clang)
 # python2-pexpect dependency is removed in 1.6

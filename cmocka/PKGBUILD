@@ -15,7 +15,7 @@ sha1sums=('ec536630f07f8a8f2766056e7de06bd72e0a2bf0')
 build() {
   rm -rf build; mkdir build
   cd build
-  cmake ../${pkgname}-${pkgver} -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
+  cmake ../$pkgname-$pkgver -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
   make
 }
 

@@ -17,7 +17,7 @@ pkgver() {
 }
 
 package() {
-  install -d "${pkgdir}/usr/share/vim/vimfiles"
+  install -d "$pkgdir/usr/share/vim/vimfiles"
   cp -r vim-SystemVerilog/{ftdetect,ftplugin,indent,snippets,syntax} "$pkgdir/usr/share/vim/vimfiles/"
 #  install -Dm755 vim-SystemVerilog/{ftdetect,ftplugin,indent,snippets,syntax} "$pkgdir/usr/share/vim/vimfiles/"
 }

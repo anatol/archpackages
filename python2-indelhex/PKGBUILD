@@ -13,7 +13,7 @@ source=(https://launchpad.net/intelhex/trunk/1.5/+download/intelhex-$pkgver.tar.
 sha1sums=('37657539645754d75e6718bc06274ce55751e782')
 
 package() {
-  cd intelhex-${pkgver}
-  python2 setup.py install --root="${pkgdir}" --optimize=1
-  install -Dm644 LICENSE.txt "${pkgdir}/usr/share/licenses/$pkgname/license.txt"
+  cd intelhex-$pkgver
+  python2 setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/license.txt"
 }

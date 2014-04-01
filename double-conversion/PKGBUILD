@@ -1,4 +1,5 @@
-# Maintainer: Joel Teichroeb <joel@teichroeb.net>
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
+# Contributor: Joel Teichroeb <joel@teichroeb.net>
 # Contributor: Jonas Heinrich <onny@project-insanity.org>
 
 pkgname=double-conversion

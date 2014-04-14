@@ -1,8 +1,8 @@
 # Maintainer: Anatol Pomozov anatol dot pomozov at g mail
 
 pkgname=android
-pkgver=4.4.2_r1
-_tagname=android-sdk-$pkgver
+pkgver=4.4.2_r2
+_tagname=android-$pkgver
 pkgrel=1
 pkgdesc='Platform designed for touchscreen mobile devices such as smartphones and tablet computers'
 arch=(i686 x86_64)
@@ -10,8 +10,10 @@ license=(custom)
 url='http://developer.android.com/sdk/index.html'
 depends=()
 makedepends=(gnupg jdk7-openjdk python2)
-source=(packages)
-md5sums=('1e64c7002d9398ed78c4325c8033c3f9')
+source=(packages
+        remove_restrictions.diff)
+sha1sums=('fd02aea83566689c84b8ea9467b0c42b87c07f51'
+          'd630a8cf5844e4d97dfd044cf0264c2b0a8d270c')
 _url=https://android.googlesource.com
 
 # sdk, sdk-tools, sdk-build-tools, ndk
@@ -35,10 +37,10 @@ prepare() {
       git clone --depth 1 --single-branch --branch $_tagname $_url/$name .
     fi
 
-    if [ $(git describe --exact-match --tags HEAD) != $_tagname ]; then
-      git checkout $_tagname
+    if [ $(git describe --dirty --exact-match --tags) != $_tagname ]; then
+      git checkout --force $_tagname
       # one needs GPG key to verify the tag http://source.android.com/source/downloading.html
-      git tag -v $_tagname
+      # git tag $_tagname
     fi
 
     popd
@@ -53,6 +55,8 @@ prepare() {
   # TODO: remove projects that are not in packages 
   # TODO: remove java target from core/combo/javac.mk
   # TODO: update external/openssl/Crypto-config.mk to point to x64
+
+  patch -p1 < "$srcdir"/remove_restrictions.diff
 
   # fix python
   echo 'Fixing python shebangs'
@@ -69,6 +73,8 @@ build() {
   source build/envsetup.sh
   lunch sdk-eng
   make sdk
+
+  # tools?
 }
 
 package() {

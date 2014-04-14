@@ -2,9 +2,8 @@
 <manifest>
 
   <remote  name="aosp"
-           fetch=".."
-           review="https://android-review.googlesource.com/" />
-  <default revision="android-sdk-4.4.2_r1"
+           fetch=".." />
+  <default revision="refs/tags/android-4.4.2_r2"
            remote="aosp"
            sync-j="4" />
 

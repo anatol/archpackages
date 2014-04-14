@@ -16,6 +16,9 @@ projects = IO.readlines(ARGV[0]).map{|s|
   next nil if name =~ %r{^platform/prebuilts/(gcc|clang)/}
 
 # do we need prebuilts?
+  next nil if name =~ %r{^platform/prebuilts/}
+  next nil if name =~ %r{^platform/docs/}
+  next nil if name =~ %r{^device/}
 
   next path + ' ' + name
 }.compact

@@ -3,7 +3,7 @@
 
 _gemname=dep_selector
 pkgname=ruby-$_gemname
-pkgver=1.0.0
+pkgver=1.0.1
 pkgrel=1
 pkgdesc='Given packages, versions, and a dependency graph, find a valid assignment of package versions'
 arch=(i686 x86_64)
@@ -13,7 +13,7 @@ depends=(ruby ruby-ffi ruby-dep-selector-libgecode)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)
-sha1sums=('35a9501d81f9a9c29f8dd5c9d14091fc7e6ad41c')
+sha1sums=('fe4f2ba9b52947a3e3c96aade10d776f8dfc4006')
 
 package() {
   local _gemdir="$(ruby -e'puts Gem.default_dir')"

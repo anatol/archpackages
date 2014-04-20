@@ -3,7 +3,7 @@
 
 _gemname=ridley
 pkgname=ruby-$_gemname
-pkgver=3.0.0
+pkgver=3.1.0
 pkgrel=1
 pkgdesc='A reliable Chef API client with a clean syntax'
 arch=(any)
@@ -13,7 +13,7 @@ depends=(ruby ruby-addressable ruby-varia_model ruby-buff-config ruby-buff-exten
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)
-sha1sums=('0a0a41f3ac65183d9620bd3fc8206097a45d28f4')
+sha1sums=('82880da3ae8aa15a47d1204a6ebd039ecfe0b5dc')
 
 package() {
   local _gemdir="$(ruby -e'puts Gem.default_dir')"

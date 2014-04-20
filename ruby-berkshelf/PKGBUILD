@@ -4,17 +4,17 @@
 
 _gemname=berkshelf
 pkgname=ruby-$_gemname
-pkgver=3.0.1
+pkgver=3.1.0
 pkgrel=1
 pkgdesc='Manages a Cookbook'\''s, or an Application'\''s, Cookbook dependencies'
 arch=(any)
 url='http://berkshelf.com'
 license=('Apache 2.0')
-depends=(ruby ruby-addressable ruby-berkshelf-api-client ruby-buff-config ruby-buff-extensions-0 ruby-buff-shell_out ruby-faraday ruby-minitar ruby-retryable ruby-ridley ruby-solve ruby-thor ruby-octokit-2 ruby-celluloid-0.16.0.pre ruby-celluloid-io-0.16.0.pre)
+depends=(ruby ruby-addressable ruby-berkshelf-api-client ruby-buff-config ruby-buff-extensions-0 ruby-buff-shell_out ruby-faraday ruby-minitar ruby-retryable ruby-ridley ruby-solve ruby-thor ruby-octokit ruby-celluloid-0.16.0.pre ruby-celluloid-io-0.16.0.pre)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)
-sha1sums=('205d9ac1a1b266b529a6444279c31ada35a7e618')
+sha1sums=('b195ce97ea0069e3f9ce9294dae9179d6118335a')
 
 package() {
   local _gemdir="$(ruby -e'puts Gem.default_dir')"

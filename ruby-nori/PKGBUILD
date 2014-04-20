@@ -5,8 +5,8 @@
 
 _gemname=nori
 pkgname=ruby-$_gemname
-pkgver=2.3.0
-pkgrel=2
+pkgver=2.4.0
+pkgrel=1
 pkgdesc='XML to Hash translator'
 arch=(any)
 url='https://github.com/savonrb/nori'
@@ -15,7 +15,7 @@ depends=(ruby)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)
-sha1sums=('2537e536afa471c544a90878f82001dd1558fa2e')
+sha1sums=('2d4bf52395c6c1b61d5b522dd7c5dfb886367afb')
 
 package() {
   local _gemdir="$(ruby -e'puts Gem.default_dir')"

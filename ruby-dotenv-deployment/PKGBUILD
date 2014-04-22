@@ -3,7 +3,7 @@
 
 _gemname=dotenv-deployment
 pkgname=ruby-$_gemname
-pkgver=0.0.1
+pkgver=0.0.2
 pkgrel=1
 pkgdesc='Deployment concerns for dotenv'
 arch=(any)
@@ -13,7 +13,7 @@ depends=(ruby)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)
-sha1sums=('869f3ed0b206da4cc17a063e328200e6dff83c42')
+sha1sums=('e620c3fd1472d883399b129e6b479132fd8113a3')
 
 package() {
   local _gemdir="$(ruby -e'puts Gem.default_dir')"

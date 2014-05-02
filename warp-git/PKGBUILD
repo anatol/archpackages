@@ -1,7 +1,7 @@
 # Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 pkgname=warp-git
-pkgver=r5.b140373
+pkgver=r37.ba147b3
 pkgrel=1
 pkgdesc='A fast preprocessor for C and C++'
 arch=(i686 x86_64)

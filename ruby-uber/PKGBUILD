@@ -3,7 +3,7 @@
 
 _gemname=uber
 pkgname=ruby-$_gemname
-pkgver=0.0.5
+pkgver=0.0.6
 pkgrel=1
 pkgdesc='Gem-authoring tools like class method inheritance in modules, dynamic options and more.'
 arch=(any)
@@ -13,7 +13,7 @@ depends=(ruby)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)
-sha1sums=('086ee1633f86c0099fbf0598ec14add476b25ffe')
+sha1sums=('9ec0088c5ff0b98ac9a462202fca69aa144c522c')
 
 package() {
   local _gemdir="$(ruby -e'puts Gem.default_dir')"

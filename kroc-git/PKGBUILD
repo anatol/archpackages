@@ -1,0 +1,47 @@
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
+
+pkgname=kroc-git
+pkgver=r2857.28501cf 
+pkgrel=1
+pkgdesc='Kent Retargetable occam Compiler. An occam-pi compiler.'
+arch=(i686 x86_64)
+url='http://www.cs.kent.ac.uk/projects/ofa/kroc/'
+license=(GPL)
+depends=(cuda)
+makedepends=(git python2)
+source=(git://github.com/concurrency/kroc
+        64bit.patch)
+md5sums=('SKIP'
+         '342fa40c473738a5780ac4107629d84b')
+
+pkgver() {
+  cd kroc
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+  cd kroc
+
+  patch -p1 < "$srcdir"/64bit.patch
+
+  find -type f -exec sed -i -e 's/env python/&2/' -e 's_/bin/python_&2_' -e 's/PYTHON=python/&2/' '{}' \;
+  sed -e 's_python__' -i runtime/ccsp/include/Makefile.am
+}
+
+build() {
+  cd kroc
+  autoreconf -fi
+  ./configure --prefix=/usr
+  make
+}
+
+check() {
+  cd kroc
+  make check
+}
+
+package() {
+  cd kroc
+  make DESTDIR="$pkgdir" install
+}
+

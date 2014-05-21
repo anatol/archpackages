@@ -1,0 +1,63 @@
+diff --git a/m4/kroc.m4 b/m4/kroc.m4
+index 29f27af..d2d786e 100644
+--- a/m4/kroc.m4
++++ b/m4/kroc.m4
+@@ -86,15 +86,6 @@ if test "x$KROC_BUILD_ROOT" != "x"; then
+ 
+   KROC_CCSP_CFLAGS="$KROC_CCSP_CFLAGS -fomit-frame-pointer -fno-defer-pop"
+ 
+-  case "$target_cpu" in
+-    x86_64)
+-      # Compile in 32-bit mode.
+-      KROC_CCSP_CFLAGS="$KROC_CCSP_CFLAGS -m32"
+-      KROC_CCSP_ASFLAGS="$KROC_CCSP_ASFLAGS --32"
+-      KROC_CCSP_LDFLAGS="$KROC_CCSP_LDFLAGS -m32 -Wl,-melf_i386"
+-      ;;
+-  esac
+-
+   case "$target_os" in
+     cygwin*)
+       KROC_CCSP_CFLAGS="$KROC_CCSP_CFLAGS -DHOSTOS_CYGWIN"
+diff --git a/tools/occ21/configure.ac b/tools/occ21/configure.ac
+index 70b1e2a..278fd37 100644
+--- a/tools/occ21/configure.ac
++++ b/tools/occ21/configure.ac
+@@ -40,13 +40,6 @@ esac
+ dnl not really used for LD, rather gcc..
+ EXTRA_LDFLAGS=""
+ 
+-case "$target_cpu" in
+- x86_64)
+-  ARCH_DEFS="$ARCH_DEFS -m32"
+-  EXTRA_LDFLAGS="-m32"
+-  ;;
+-esac
+-
+ AC_SUBST(ARCH_DEFS)
+ AC_SUBST(EXTRA_LDFLAGS)
+ 
+diff --git a/tools/tranx86/configure.ac b/tools/tranx86/configure.ac
+index d2af964..3558487 100644
+--- a/tools/tranx86/configure.ac
++++ b/tools/tranx86/configure.ac
+@@ -17,20 +17,6 @@ KROC_CCSP_FLAGS
+ ARCH_DEFS=""
+ GNUASFLAGS=""
+ 
+-case "$host_cpu" in
+- x86_64)
+-  ARCH_DEFS="-m32"
+-  GNUASFLAGS="--32"
+-  ;;
+- i386)
+-  case "$target" in
+-   *Darwin* | *darwin*)
+-    GNUASFLAGS='-arch", "i386'
+-    ;;
+-  esac
+-  ;;
+-esac
+-
+ AC_SUBST(ARCH_DEFS)
+ 
+ case "$host_cpu" in

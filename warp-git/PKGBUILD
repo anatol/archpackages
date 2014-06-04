@@ -1,14 +1,14 @@
 # Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 pkgname=warp-git
-pkgver=r37.ba147b3
+pkgver=r46.0f8ddc4
 pkgrel=1
 pkgdesc='A fast preprocessor for C and C++'
 arch=(i686 x86_64)
 url='https://github.com/facebook/warp'
 license=(custom)
 depends=(gcc-libs)
-makedepends=(git gdc)
+makedepends=(git gdc libphobos-devel)
 source=(git+https://github.com/facebook/warp.git)
 md5sums=('SKIP')
 

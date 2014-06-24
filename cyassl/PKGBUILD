@@ -18,7 +18,7 @@ build() {
               --enable-opensslextra --enable-fortress \
               --enable-keygen --enable-certgen \
               --disable-debug --disable-ecc \
-              --disable-ntru
+              --disable-ntru --disable-examples
 
   make
 }

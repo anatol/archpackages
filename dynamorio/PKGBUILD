@@ -1,0 +1,25 @@
+# Maintainer: Anatol Pomozov anatol dot pomozov at g mail
+
+pkgname=dynamorio
+pkgver=5.0.0
+pkgrel=1
+_tag=release_${pkgver//./_}
+pkgdesc='Runtime code manipulation system that supports code transformations on any part of a program, while it executes'
+arch=(i686 x86_64)
+license=(BSD)
+depends=()
+makedepends=(svn)
+url='https://code.google.com/p/dynamorio/'
+source=(svn+http://dynamorio.googlecode.com/svn/tags/$_tag)
+sha1sums=('SKIP')
+
+build() {
+  cd $_tag
+  cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release .
+  make
+}
+
+package() {
+  cd $_tag
+  make DESTDIR="$pkgdir" install
+}

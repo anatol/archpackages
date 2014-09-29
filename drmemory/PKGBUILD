@@ -1,0 +1,24 @@
+# Maintainer: Anatol Pomozov anatol dot pomozov at g mail
+
+pkgname=drmemory
+pkgver=1.8.0
+pkgrel=1
+_tag=$pkgver-8
+pkgdesc='Memory monitoring tool capable of identifying memory-related programming errors such as accesses of uninitialized memory, accesses to unaddressable memory'
+arch=(i686 x86_64)
+license=(LGPL)
+depends=()
+url='https://code.google.com/p/drmemory/'
+source=(http://dl.bintray.com/bruening/DrMemory/DrMemory-$_tag-Source.tar.gz)
+sha1sums=('6f487e94b3793214d40ce9a084a92709505825aa')
+
+build() {
+  cd DrMemory-$_tag-Source
+  cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release .
+  make
+}
+
+package() {
+  cd DrMemory-$_tag-Source
+  make DESTDIR="$pkgdir" install
+}

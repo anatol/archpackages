@@ -10,7 +10,7 @@ url='https://chromium.googlesource.com/chromiumos/platform/minijail'
 license=('custom:chromiumos')
 depends=(libcap)
 source=(https://chromium.googlesource.com/chromiumos/platform/minijail/+archive/refs/heads/$_tag.tar.gz)
-sha1sums=('74d31f9d77822d7824501a730da8e3dd49ea801b')
+sha1sums=('3e3b2039afe92ecfe9b58b5e9b4f439cd2b2c6fc')
 
 prepare() {
   sed 's/-Werror//' -i Makefile

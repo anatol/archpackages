@@ -1,0 +1,44 @@
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
+
+pkgname=proxygen-git
+pkgver=r27.560c956
+pkgrel=1
+pkgdesc='Library used as the basis for building many HTTP servers, proxies, and clients'
+arch=(i686 x86_64)
+url='https://github.com/facebook/proxygen'
+license=(BSD)
+depends=(google-glog gflags folly-git fbthrift-git)
+makedepends=(git autoconf-archive)
+source=(git+https://github.com/facebook/proxygen.git)
+md5sums=('SKIP')
+
+pkgver() {
+  cd proxygen
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+  cd proxygen/proxygen
+#  find -name '*.py' -exec sed -i 's|^#!/usr/bin/env python$|#!/usr/bin/env python2|' {} \;
+
+#  cd test
+#  ln -s "$srcdir"/gtest-1.6.0
+}
+
+build() {
+  cd proxygen/proxygen
+  autoreconf -ivf
+  ./configure --prefix=/usr
+  make
+}
+
+check() {
+  cd proxygen/proxygen
+  make check
+}
+
+package() {
+  cd proxygen/proxygen
+  make DESTDIR="$pkgdir" install
+}
+

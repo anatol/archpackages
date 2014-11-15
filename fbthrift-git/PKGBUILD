@@ -1,0 +1,44 @@
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
+
+pkgname=fbthrift-git
+pkgver=r726.454ceb2
+pkgrel=1
+pkgdesc='Facebooks branch of apache thrift'
+arch=(i686 x86_64)
+url='https://github.com/facebook/fbthrift'
+license=(APACHE)
+depends=(folly-git)
+makedepends=(git)
+source=(git+https://github.com/facebook/fbthrift.git)
+md5sums=('SKIP')
+
+pkgver() {
+  cd fbthrift
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+  cd fbthrift/thrift
+#  find -name '*.py' -exec sed -i 's|^#!/usr/bin/env python$|#!/usr/bin/env python2|' {} \;
+
+#  cd test
+#  ln -s "$srcdir"/gtest-1.6.0
+}
+
+build() {
+  cd fbthrift/thrift
+  autoreconf --install
+  ./configure --prefix=/usr
+  make
+}
+
+check() {
+  cd fbthrift/thrift
+  make check
+}
+
+package() {
+  cd fbthrift/thrift
+  make DESTDIR="$pkgdir" install
+}
+

@@ -7,8 +7,8 @@ pkgdesc='Facebooks branch of apache thrift'
 arch=(i686 x86_64)
 url='https://github.com/facebook/fbthrift'
 license=(APACHE)
-depends=(folly-git)
-makedepends=(git)
+depends=(folly-git snappy)
+makedepends=(git python2)
 source=(git+https://github.com/facebook/fbthrift.git)
 md5sums=('SKIP')
 
@@ -19,16 +19,14 @@ pkgver() {
 
 prepare() {
   cd fbthrift/thrift
-#  find -name '*.py' -exec sed -i 's|^#!/usr/bin/env python$|#!/usr/bin/env python2|' {} \;
-
-#  cd test
-#  ln -s "$srcdir"/gtest-1.6.0
+  find -name '*.py' -exec sed -i 's|^#!/usr/bin/env python\b|#!/usr/bin/env python2|' {} \;
+  sed -i 's|\bpython\b|python2|g' lib/cpp2/Makefile.am lib/cpp2/test/Makefile.am
 }
 
 build() {
   cd fbthrift/thrift
   autoreconf --install
-  ./configure --prefix=/usr
+  PYTHON_VERSION=2 ./configure --prefix=/usr
   make
 }
 

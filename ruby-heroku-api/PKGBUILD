@@ -4,7 +4,7 @@
 
 _gemname=heroku-api
 pkgname=ruby-$_gemname
-pkgver=0.3.19
+pkgver=0.3.20
 pkgrel=1
 pkgdesc='Ruby Client for the Heroku API'
 arch=(any)
@@ -14,7 +14,7 @@ depends=(ruby ruby-excon ruby-multi_json)
 options=(!emptydirs)
 source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
 noextract=($_gemname-$pkgver.gem)
-sha1sums=('a68be77af32344c2d80520111bacab865d687b6d')
+sha1sums=('fae72c8d5556c49ddd3eb93da29315ad29a1055d')
 
 package() {
   local _gemdir="$(ruby -e'puts Gem.default_dir')"

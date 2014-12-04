@@ -5,7 +5,7 @@ pkgname=vboot-utils
 pkgdesc='Chromium OS verified boot utilities'
 pkgver=40.6457
 _tag=release-R${pkgver/\./-}.B
-pkgrel=1
+pkgrel=2
 arch=(i686 x86_64)
 url='https://chromium.googlesource.com/chromiumos/platform/vboot_reference'
 license=('custom:chromiumos')
@@ -20,13 +20,13 @@ prepare() {
   patch -p1 < "$srcdir/vboot-utils-shared-cgpt.patch"
 }
 
-# 'make run_tests'
-
 build() {
   make
 }
 
 package() {
   make DESTDIR="$pkgdir" MINIMAL=1 install
+  install -d "$pkgdir"/usr/share/vboot/
+  cp -r tests/devkeys "$pkgdir"/usr/share/vboot/devkeys
   install -m 644 -D LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }

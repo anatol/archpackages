@@ -1,0 +1,25 @@
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
+
+pkgname=vboot-firmware-x86_64
+pkgdesc='Chromium OS firmware library for x86_64'
+pkgver=40.6457
+_tag=release-R${pkgver/\./-}.B
+pkgrel=1
+arch=(any)
+url='https://chromium.googlesource.com/chromiumos/platform/vboot_reference'
+license=('custom:chromiumos')
+# !buildflags
+options=(staticlibs)
+source=(https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+archive/refs/heads/$_tag.tar.gz)
+sha1sums=(SKIP)
+
+build() {
+  make fwlib fwlib2 FIRMWARE_ARCH=amd64 VBOOT2=1
+}
+
+package() {
+  install -d "$pkgdir"/usr/{lib,include/vboot-firmware}
+  install -m 644 -t "$pkgdir"/usr/lib build/vboot_fw{,2}.a
+  cp -r firmware/include/* "$pkgdir"/usr/include/vboot-firmware
+  install -m 644 -D LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

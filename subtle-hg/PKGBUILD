@@ -1,0 +1,29 @@
+# Contributor: unexist <unexist@subforge.org>
+# Contributor: manveru <m.fellinger@gmail.com>
+# Contributor: Xilon <xilonmu@gmail.com>
+# Contributor: belak <kelwert@mtu.edu>
+pkgname="subtle-hg"
+pkgver=0.11.3240
+pkgrel=1
+pkgdesc="A grid-based manual tiling window manager with a strong focus on easy but customizable look and feel"
+arch=("i686" "x86_64")
+url="http://subtle.subforge.org"
+license=("GPL")
+depends=("libx11" "ruby" "ruby-minitar")
+makedepends=("mercurial" "ruby" "pkg-config")
+provides=("subtle")
+conflicts=("subtle" "sur-hg")
+replaces=("subtle-svn")
+backup=("etc/xdg/subtle/subtle.rb")
+source=('hg+http://hg.subforge.org/subtle')
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/subtle"
+  echo 0.11.$(hg identify -n)
+}
+
+package() {
+  cd "$srcdir/subtle"
+  rake destdir="${pkgdir}" install || return 1
+}

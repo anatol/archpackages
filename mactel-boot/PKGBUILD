@@ -30,7 +30,7 @@ package() {
 	cd $pkgname-$pkgver
 
 	make DESTDIR="$pkgdir" install
-	
+
 	install -D -m0755 "$srcdir/mactel-boot-setup" "$pkgdir/usr/bin/mactel-boot-setup"
 	install -d "$pkgdir/usr/share/mactel-boot"
 	install -D -m0644 "$srcdir/mactel-boot-$pkgver/SystemVersion.plist" "$pkgdir/usr/share/mactel-boot/SystemVersion.plist"

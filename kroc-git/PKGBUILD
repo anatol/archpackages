@@ -1,7 +1,7 @@
 # Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 pkgname=kroc-git
-pkgver=r2857.28501cf 
+pkgver=r2857.28501cf
 pkgrel=1
 pkgdesc='Kent Retargetable occam Compiler. An occam-pi compiler.'
 arch=(i686 x86_64)

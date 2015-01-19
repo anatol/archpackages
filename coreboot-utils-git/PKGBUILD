@@ -30,7 +30,7 @@ build() {
 
 package() {
   cd coreboot/util
-  install -m755 -d "$pkgdir/usr/bin" 
+  install -m755 -d "$pkgdir/usr/bin"
   install -m755 -t "$pkgdir/usr/bin" cbfstool/{cbfstool,rmodtool} ifdtool/ifdtool nvramtool/nvramtool inteltool/inteltool superiotool/superiotool cbmem/cbmem
 
   install -Dm644 ../COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"

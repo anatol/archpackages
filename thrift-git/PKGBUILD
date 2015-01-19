@@ -49,7 +49,7 @@ build() {
               --without-lua \
               --without-nodejs \
               --without-tests
-              
+
   make
 }
 

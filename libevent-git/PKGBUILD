@@ -7,6 +7,7 @@ url="http://libevent.org/"
 license=('BSD')
 depends=('openssl')
 optdepends=('python2: to use event_rpcgen.py')
+options=(!strip debug)
 provides=(libevent)
 conflicts=(libevent)
 replaces=(libevent)
@@ -21,8 +22,8 @@ pkgver() {
 build() {
   cd libevent
   ./autogen.sh
-  ./configure --prefix=/usr --sysconfdir=/etc
-  make
+  ./configure --prefix=/usr --sysconfdir=/etc --enable-debug-mode
+  make V=1 CFLAGS="${CFLAGS} -g"
 }
 
 package() {

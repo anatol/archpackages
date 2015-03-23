@@ -6,6 +6,7 @@ pkgver=R41.6680
 _tag=release-${pkgver/\./-}.B
 pkgrel=1
 arch=(i686 x86_64)
+# Moved to https://chromium.googlesource.com/chromiumos/platform2/+/master/minijail/
 url='https://chromium.googlesource.com/chromiumos/platform/minijail'
 license=('custom:chromiumos')
 depends=(libcap)

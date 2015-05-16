@@ -9,7 +9,7 @@ arch=(i686 x86_64)
 url='http://www.dreamsourcelab.com/'
 license=(GPL3)
 depends=(boost-libs qt5-base libsigrok4dsl-git libsigrokdecode)
-makedepends=(boost)
+makedepends=(boost cmake)
 source=(git://github.com/DreamSourceLab/DSView
         0001-Fix-compilation-error.patch
         0002-Instead-of-polluting-bin-use-usr-share-path-for-reso.patch
